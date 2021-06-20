@@ -1,0 +1,36 @@
+export PROJECT_NAME=teaocha-design-site-ui
+export PROJECT_ROOT=$(shell pwd)
+
+export NODE_DEV_SHELL_IMAGE_NAME=$(PROJECT_NAME)-node-dev-env
+
+
+.PHONY: install node-dev-shell node-dev-shell-image lint test-unit coverage
+
+install:
+	make node-dev-shell-image
+	docker run -it --rm $(NODE_DEV_SHELL_IMAGE_NAME) npm install
+
+start:
+	docker run -t --rm $(NODE_DEV_SHELL_IMAGE_NAME) npm run start
+
+lint:
+	docker run -t --rm $(NODE_DEV_SHELL_IMAGE_NAME) npm run lint
+
+test-unit:
+	docker run -t --rm $(NODE_DEV_SHELL_IMAGE_NAME) npm run test
+
+coverage:
+	docker run -t --rm $(NODE_DEV_SHELL_IMAGE_NAME) npm run test
+
+# ---------------------------------------------
+
+node-dev-shell:
+	docker run -it --rm \
+		-p 8080:8080 \
+		-v $(PROJECT_ROOT):/app \
+		$(NODE_DEV_SHELL_IMAGE_NAME) /bin/bash
+
+# ---------------------------------------------
+
+node-dev-shell-image:
+	docker build --tag $(NODE_DEV_SHELL_IMAGE_NAME) --target dev .

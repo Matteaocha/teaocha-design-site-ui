@@ -1,0 +1,49 @@
+{
+  "name": "@teaocha/teaocha-design-site-ui",
+  "version": "1.0.0",
+  "description": "Code for the UI of teaochadesign.com",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint ${ROOT_DIR:-apps/* common/*}",
+    "lint-fix": "eslint ${ROOT_DIR:-apps/* common/*} --fix",
+    "start": "webpack serve",
+    "test": "jest --root-dir ${ROOT_DIR:-.}",
+    "test-watch": "jest --root-dir ${ROOT_DIR:-.} --watch",
+    "test-coverage": "jest --root-dir ${ROOT_DIR:-.} --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github:Matteaocha/teaocha-design-site-ui.git"
+  },
+  "author": "Matthew Bilton",
+  "workspaces": [
+    "./apps/*",
+    "./common/*"
+  ],
+  "devDependencies": {
+    "@types/jest": "^26.0.23",
+    "@types/react": "^17.0.11",
+    "@typescript-eslint/eslint-plugin": "^4.27.0",
+    "@typescript-eslint/parser": "^4.27.0",
+    "autoprefixer": "^10.2.6",
+    "compression-webpack-plugin": "^8.0.0",
+    "css-loader": "^5.2.6",
+    "eslint": "^7.29.0",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.24.0",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.3.1",
+    "jest": "^27.0.4",
+    "node-sass": "^6.0.0",
+    "postcss-loader": "^6.1.0",
+    "react-test-renderer": "^17.0.2",
+    "sass-loader": "^12.1.0",
+    "style-loader": "^2.0.0",
+    "ts-jest": "^27.0.3",
+    "ts-loader": "^9.2.3",
+    "typescript": "^4.3.4",
+    "webpack": "^5.39.1",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2"
+  }
+}
