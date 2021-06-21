@@ -1,0 +1,253 @@
+@keyframes steamrise {
+  0% {
+    bottom: 180px;
+    opacity: 0.0;
+  }
+  20% {
+    opacity: 1.0;
+  }
+  100% {
+    bottom: 300px;
+    opacity: 0.0;
+  }
+}
+
+@keyframes steamrise2 {
+  0% {
+    bottom: 160px;
+    opacity: 0.0;
+  }
+  20% {
+    opacity: 0.8;
+  }
+  100% {
+    bottom: 250px;
+    opacity: 0.0;
+  }
+}
+
+@keyframes steamrise3 {
+  0% {
+    bottom: 170px;
+    opacity: 0.0;
+  }
+  20% {
+    opacity: 0.4;
+  }
+  100% {
+    bottom: 250px;
+    opacity: 0.0;
+  }
+}
+
+@keyframes steamriseSMALL {
+  0% {
+    bottom: 110px;
+    opacity: 0.0;
+  }
+  20% {
+    opacity: 1.0;
+  }
+  100% {
+    bottom: 210px;
+    opacity: 0.0;
+  }
+}
+
+@keyframes steamrise2SMALL {
+  0% {
+    bottom: 100px;
+    opacity: 0.0;
+  }
+  20% {
+    opacity: 0.8;
+  }
+  100% {
+    bottom: 170px;
+    opacity: 0.0;
+  }
+}
+
+@keyframes steamrise3SMALL {
+  0% {
+    bottom: 110px;
+    opacity: 0.0;
+  }
+  20% {
+    opacity: 0.4;
+  }
+  100% {
+    bottom: 160px;
+    opacity: 0.0;
+  }
+}
+
+@keyframes leaffall {
+  from {
+    top: -20%;
+  }
+  to {
+    top: 120%;
+  }
+}
+
+@keyframes leafsway {
+  0% {
+    left: 12%;
+  }
+  50%{
+    left: 8%;
+  }
+  100% {
+    left: 12%;
+  }
+}
+
+@keyframes leafswaySMALL {
+  0% {
+    left: 7%;
+  }
+  50%{
+    left: 4%;
+  }
+  100% {
+    left: 7%;
+  }
+}
+
+.bgLeft {
+  position: absolute;
+  bottom: -10px;
+  left: 0px;
+  width: 100%;
+  min-width: 550px;
+
+  & img {
+    object-position: bottom left;
+  }
+}
+
+.bgRight {
+  position: absolute;
+  bottom: 0px;
+  right: -10px;
+  width: 60%;
+
+  & img {
+    object-position: bottom left;
+  }
+}
+
+.tree {
+  position: absolute;
+  left: -5px;
+  bottom: -5vh;
+  height: 110%;
+  min-width: 350px;
+
+  & img {
+    object-position: left;
+  }
+}
+
+.leaf {
+  width: 35px;
+  position: absolute;
+  animation: leaffall 12s linear 0s infinite, leafsway 3s ease-in-out 0s infinite;
+  
+  @media screen and (max-width: 1300px) {
+    animation: leaffall 12s linear 0s infinite, leafswaySMALL 3s ease-in-out 0s infinite;
+  }
+
+  @media screen and (max-width: 1100px) {
+    display: none;
+  }
+}
+
+.table {
+  position: absolute;
+  bottom: -110px;
+  right: -35px;
+  width: 300px;
+
+  @media screen and (max-width: 1200px) {
+    width: 250px;
+    right: -80px;
+  }
+
+  @media screen and (max-width: 800px) {
+    display: none;
+  }
+}
+
+.teacup {
+  position: absolute;
+  bottom: 100px;
+  right: 40px;
+  height: 140px;
+  width: 160px;
+
+  @media screen and (max-width: 1200px) {
+    width: 10%;
+    right: 30px;
+    bottom: 60px;
+  }
+
+  @media screen and (max-width: 800px) {
+    display: none;
+  }
+}
+
+.steam1 {
+  position: absolute;
+  right: 130px;
+  opacity: 0.0;
+  width: 60px;
+  animation: steamrise 6s linear 0s infinite;
+
+  @media screen and (max-width: 1200px) {
+    width: 5%;
+    right: 85px;
+    animation: steamriseSMALL 6s linear 0s infinite;
+  }
+
+  @media screen and (max-width: 800px) {
+    display: none;
+  }
+}
+
+.steam2 {
+  position: absolute;
+  right: 80px;
+  opacity: 0.0;
+  width: 70px;
+  animation: steamrise2 6s linear 4s infinite;
+
+  @media screen and (max-width: 1200px) {
+    width: 5%;
+    right: 55px;
+    animation: steamrise2SMALL 6s linear 4s infinite;
+  }
+
+  @media screen and (max-width: 800px) {
+    display: none;
+  }
+}
+
+.steam3 {
+  position: absolute;
+  right: 50px;
+  opacity: 0.0;
+  width: 70px;
+  animation: steamrise3 6s linear 2s infinite;
+
+  @media screen and (max-width: 1200px) {
+    width: 5%;
+    right: 40px;
+    animation: steamrise3SMALL 6s linear 2s infinite;
+  }
+
+  @media screen and (max-width: 800px) {
+    display: none;
+  }
+}

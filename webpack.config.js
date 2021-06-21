@@ -52,7 +52,14 @@ module.exports = {
           // Creates `style` nodes from JS strings
           'style-loader',
           // Translates CSS into CommonJS
-          'css-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: {
+                localIdentName: '[name]__[local]___[hash:base64:5]',
+              }
+            },
+          },
           // Compiles Sass to CSS
           'sass-loader',
           // Enables auto-prexing etc
@@ -108,6 +115,7 @@ module.exports = {
     port: env.port,
     host: '0.0.0.0',
     hot: true,
+    historyApiFallback: true,
   },
   output: {
     filename: 'bundle.js',
