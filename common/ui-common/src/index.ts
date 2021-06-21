@@ -1,3 +1,7 @@
-export function say(something: string): string {
-  return `Hello, and ${something}`
-}
+export * from './components'
+
+export {
+  createTheme,
+  initializeIcons,
+  loadTheme,
+} from '@fluentui/react'

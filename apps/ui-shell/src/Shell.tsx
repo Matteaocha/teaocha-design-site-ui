@@ -1,7 +1,11 @@
-import { ReactElement } from 'react'
+import { PrimaryButton } from '@teaocha/ui-common'
+import { Background } from './components'
 
-export default function Shell(): ReactElement {
+export default function Shell(): JSX.Element {
   return (
-    <h1>Hello</h1>
+    <div>
+      <Background />
+      <PrimaryButton>Hello</PrimaryButton>
+    </div>
   )
 }

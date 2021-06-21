@@ -28,7 +28,12 @@ node-dev-shell:
 	docker run -it --rm \
 		-p 8080:8080 \
 		-v $(PROJECT_ROOT):/app \
+		-h node-dev-shell \
+		--name $(NODE_DEV_SHELL_IMAGE_NAME) \
 		$(NODE_DEV_SHELL_IMAGE_NAME) /bin/bash
+
+node-dev-shell-connect:
+	docker exec -it $(NODE_DEV_SHELL_IMAGE_NAME) /bin/bash
 
 # ---------------------------------------------
 
