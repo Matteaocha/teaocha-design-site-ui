@@ -10,5 +10,10 @@
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/ui-shell/*": ["apps/ui-shell/src/*"],
+      "@/ui-common/*": ["common/ui-common/src/*"],
+    },
   }
 }

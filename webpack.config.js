@@ -2,6 +2,7 @@ const path = require('path')
 const webpack = require('webpack')
 const CompressionPlugin = require("compression-webpack-plugin")
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin')
 
 const env = {
   ASSET_PATH: process.env.ASSET_PATH || '/',
@@ -32,6 +33,9 @@ module.exports = {
   entry: './apps/ui-shell/src/index.tsx',
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
+    plugins: [
+      new TsconfigPathsPlugin()
+    ]
   },
   devtool: 'inline-source-map',
   mode: env.NODE_ENV,

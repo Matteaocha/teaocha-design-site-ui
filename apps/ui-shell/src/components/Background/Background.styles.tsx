@@ -1,4 +1,4 @@
-import { theme } from '../../theme'
+import { theme } from '@/ui-shell/theme'
 
 export const stylesRoot = {
   backgroundColor: theme.palette.white,
