@@ -27,7 +27,36 @@ const palette = {
 
 const theme = createTheme({ palette })
 
+const paletteInverted = {
+  themePrimary: '#ffffff',
+  themeLighterAlt: '#767676',
+  themeLighter: '#a6a6a6',
+  themeLight: '#c8c8c8',
+  themeTertiary: '#d0d0d0',
+  themeSecondary: '#dadada',
+  themeDarkAlt: '#eaeaea',
+  themeDark: '#f4f4f4',
+  themeDarker: '#f8f8f8',
+  neutralLighterAlt: '#ba1616',
+  neutralLighter: '#b71616',
+  neutralLight: '#b01515',
+  neutralQuaternaryAlt: '#a41414',
+  neutralQuaternary: '#9c1313',
+  neutralTertiaryAlt: '#961212',
+  neutralTertiary: '#c8c8c8',
+  neutralSecondary: '#d0d0d0',
+  neutralPrimaryAlt: '#dadada',
+  neutralPrimary: '#ffffff',
+  neutralDark: '#f4f4f4',
+  black: '#f8f8f8',
+  white: '#bf1717',
+}
+
+const themeInverted = createTheme({ palette: paletteInverted })
+
 export {
   palette,
   theme,
+  paletteInverted,
+  themeInverted,
 }

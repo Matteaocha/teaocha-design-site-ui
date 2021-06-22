@@ -1,11 +1,47 @@
-import { PrimaryButton } from '@teaocha/ui-common'
-import { Background } from './components'
+import { useHistory } from 'react-router-dom'
+import { themeInverted } from './theme'
+import { Background, SideMenu } from './components'
 
-export default function Shell(): JSX.Element {
+const NAV_ITEMS = [
+  {
+    title: 'Home',
+    href: '/',
+  },
+  {
+    title: 'Profile',
+    href: '/profile',
+  },
+  {
+    title: 'Creations',
+    href: '/creations',
+  },
+  {
+    title: 'Blog',
+    href: '/blog',
+    disabled: true,
+  },
+  {
+    title: 'Contact',
+    href: '/contact',
+  },
+]
+
+
+function Shell(): JSX.Element {
+  const history = useHistory()
+
   return (
     <div>
       <Background />
-      <PrimaryButton>Hello</PrimaryButton>
+      <SideMenu
+        title={'Menu'}
+        navItems={NAV_ITEMS}
+        history={history}
+        theme={themeInverted}
+        visible
+      />
     </div>
   )
 }
+
+export default Shell

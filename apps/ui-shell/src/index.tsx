@@ -1,4 +1,5 @@
 import ReactDOM from 'react-dom'
+import { BrowserRouter } from 'react-router-dom'
 import {
   initializeIcons,
   loadTheme,
@@ -9,4 +10,9 @@ import Shell from './Shell'
 loadTheme(theme)
 initializeIcons()
 
-ReactDOM.render(<Shell/>, document.getElementById('root'))
+ReactDOM.render(
+  <BrowserRouter>
+    <Shell/>
+  </BrowserRouter>
+  ,document.getElementById('root')
+)

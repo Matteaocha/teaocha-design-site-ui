@@ -1,0 +1,100 @@
+$splitWidth: 400px;
+
+@mixin delayedFadeOut($delayBy, $length) {
+  transition: opacity $length, visibility 0s;
+  transition-delay: opacity $delayBy, visibility $delayBy;
+  opacity: 0.0;
+  visibility: hidden;
+}
+
+@mixin delayedFadeIn($delayBy, $length) {
+  transition: opacity $length, visibility 0s;
+  transition-delay: $delayBy, visibility $delayBy;
+  opacity: 1.0;
+  visibility: visible;
+}
+
+.sideMenu {
+  position: fixed;
+  overflow: hidden;
+  visibility: visible;
+  transition: width 0.2s, height 0.2s, top 0.2s, left 0.2s, border-radius 0.2s;
+
+  & nav {
+    margin-top: 50px;
+    text-align: center;
+
+    & ul {
+      margin: 0;
+      margin-top: 32px;
+      padding: 0;
+    }
+
+    & li {
+      font-size: 1.5em;
+      list-style: none;
+      margin: 8px 0px;
+    }
+  }
+}
+
+.sideMenuButton {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+}
+
+.sideMenuCloseButton {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
+
+.sideMenu:not(.expanded) {
+  top: 12px;
+  left: 12px;
+  width: 40px;
+  height: 40px;
+  border-radius: 100px;
+  opacity: 1.0;
+
+  & .sideMenuContent {
+    @include delayedFadeOut(0s, 0.2s);
+  }
+
+  & .sideMenuButton {
+    @include delayedFadeIn(0.3s, 0.3s);
+  }
+}
+
+.sideMenu.expanded {
+  top: 0px;
+  left: 0px;
+  width: 40%;
+  min-width: $splitWidth;
+  height: 100%;
+
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+
+  & .sideMenuContent {
+    @include delayedFadeIn(1s, 0.5s);
+  }
+
+  & .sideMenuButton {
+    @include delayedFadeOut(0s, 0s);
+  }
+
+  @media screen and (max-width: $splitWidth) {
+    width: 100%;
+    min-width: auto;
+  }
+}
+
+.sideMenu:not(.visible) {
+  visibility: hidden;
+}
