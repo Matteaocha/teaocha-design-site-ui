@@ -56,7 +56,7 @@ module.exports = {
             loader: 'css-loader',
             options: {
               modules: {
-                localIdentName: '[name]__[local]___[hash:base64:5]',
+                localIdentName: 'teaocha-[name]--[local]--[hash:base64:5]',
               }
             },
           },

@@ -1,6 +1,7 @@
 import { useHistory } from 'react-router-dom'
 import { themeInverted } from './theme'
-import { Background, SideMenu } from './components'
+import { Background } from './components'
+import { SideMenu } from '@teaocha/ui-common'
 
 const NAV_ITEMS = [
   {
@@ -25,7 +26,6 @@ const NAV_ITEMS = [
     href: '/contact',
   },
 ]
-
 
 function Shell(): JSX.Element {
   const history = useHistory()

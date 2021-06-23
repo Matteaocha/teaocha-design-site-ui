@@ -1,0 +1,1 @@
+export { IconButton as IconButton } from '@fluentui/react'

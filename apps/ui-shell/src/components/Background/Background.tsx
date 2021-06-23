@@ -4,7 +4,7 @@ import {
 } from '@teaocha/ui-common'
 import { theme } from '@/ui-shell/theme'
 
-import styles from './Background.scss'
+import classNames from './Background.scss'
 import imgBgLeft from '@/ui-shell/assets/background/backgroundLeft.svg'
 import imgBgRight from '@/ui-shell/assets/background/backgroundRight.svg'
 import imgLeaf from '@/ui-shell/assets/background/leaf.svg'
@@ -30,58 +30,61 @@ const rootStyles = {
 // Deals with background imagery, animations, dynamic loading etc.
 function Background(): JSX.Element {
   return (
-    <div style={rootStyles}>
+    <div
+      style={rootStyles}
+      data-semantic-tag={'Background'}
+    >
       <Image
         src={imgBgLeft}
-        className={styles.bgLeft}
+        className={classNames['bg-left']}
         imageFit={ImageFit.contain}
         aria-hidden={true}
       />
       <Image 
         src={imgBgRight}
-        className={styles.bgRight}
+        className={classNames['bg-right']}
         imageFit={ImageFit.contain}
         aria-hidden={true}
       />
       <Image 
         src={imgLeaf}
-        className={styles.leaf}
+        className={classNames['leaf']}
         imageFit={ImageFit.contain}
         aria-hidden={true}
       />
       <Image 
         src={imgTable}
-        className={styles.table}
+        className={classNames['table']}
         imageFit={ImageFit.contain}
         aria-hidden={true}
       />
       <Image 
         src={imgTree}
-        className={styles.tree}
+        className={classNames['tree']}
         imageFit={ImageFit.contain}
         aria-hidden={true}
       />
       <Image 
         src={imgTeacup}
-        className={styles.teacup}
+        className={classNames['teacup']}
         imageFit={ImageFit.contain}
         aria-hidden={true}
       />
       <Image 
         src={imgSteam1}
-        className={styles.steam1}
+        className={classNames['steam-1']}
         imageFit={ImageFit.contain}
         aria-hidden={true}
       />
       <Image 
         src={imgSteam2}
-        className={styles.steam2}
+        className={classNames['steam-2']}
         imageFit={ImageFit.contain}
         aria-hidden={true}
       />
       <Image 
         src={imgSteam3}
-        className={styles.steam3}
+        className={classNames['steam-3']}
         imageFit={ImageFit.contain}
         aria-hidden={true}
       />
