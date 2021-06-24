@@ -3,12 +3,15 @@ const webpack = require('webpack')
 const CompressionPlugin = require("compression-webpack-plugin")
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin')
+const CopyPlugin = require('copy-webpack-plugin')
 
 const env = {
   ASSET_PATH: process.env.ASSET_PATH || '/',
   NODE_ENV: process.env.NODE_ENV || 'development',
   PORT: process.env.PORT || '8080',
 }
+
+const distDir = path.resolve(__dirname, 'dist')
 
 let plugins = [
   new webpack.DefinePlugin({
@@ -18,6 +21,11 @@ let plugins = [
     filename: 'index.html',
     template: 'index.html' ,
   }),
+  new CopyPlugin({
+    patterns: [
+      { from: 'public', to: distDir },
+    ],
+  })
 ]
 
 if (env.NODE_ENV === 'production') {
@@ -36,6 +44,10 @@ module.exports = {
     plugins: [
       new TsconfigPathsPlugin()
     ]
+  },
+  externals: {
+    'react': 'React',
+    'react-dom': 'ReactDOM',
   },
   devtool: 'inline-source-map',
   mode: env.NODE_ENV,
@@ -111,7 +123,7 @@ module.exports = {
   },
   plugins,
   devServer: {
-    contentBase: './dist',
+    contentBase: distDir,
     port: env.port,
     host: '0.0.0.0',
     hot: true,
@@ -119,7 +131,7 @@ module.exports = {
   },
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist'),
+    path: distDir,
     publicPath: env.ASSET_PATH,
   },
 }

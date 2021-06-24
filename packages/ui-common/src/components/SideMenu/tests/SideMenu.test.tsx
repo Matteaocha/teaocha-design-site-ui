@@ -5,7 +5,7 @@ import {
   screen,
   within,
 } from '@testing-library/react'
-import { setIconOptions } from '@packages/ui-common/theming'
+import { setIconOptions } from '@/packages/ui-common/src/theming'
 import SideMenu from '../SideMenu'
 
 setIconOptions({ disableWarnings: true })

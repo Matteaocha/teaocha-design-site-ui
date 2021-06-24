@@ -1,13 +1,13 @@
-import { PrimaryButton } from '@packages/ui-common/components/PrimaryButton'
-import { Link } from '@packages/ui-common/components/Link'
+import { PrimaryButton } from '@/packages/ui-common/src/components/PrimaryButton'
+import { Link } from '@/packages/ui-common/src/components/Link'
 import {
   Panel as Panel,
   PanelType as PanelType,
-} from '@packages/ui-common/components/Panel'
+} from '@/packages/ui-common/src/components/Panel'
 import {
   ITheme as ITheme,
   ThemeProvider as ThemeProvider,
-} from '@packages/ui-common/components/ThemeProvider'
+} from '@/packages/ui-common/src/components/ThemeProvider'
 import { useState } from 'react'
 import classNames from './SideMenu.scss'
 
