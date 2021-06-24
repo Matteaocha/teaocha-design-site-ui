@@ -27,15 +27,5 @@ make coverage
 However, if you wish to enter the dev-container and run commands with `npm` you can use the following:
 
 ```
-// First boot into the dev-container
 make node-dev-shell
-
-// Then run any of the following commands
-// ('[]' specifies optional environment variables)
-npm run start
-[ROOT_DIR=] npm run lint
-[ROOT_DIR=] npm run lint-fix
-[ROOT_DIR=] npm run test
-[ROOT_DIR=] npm run test-watch
-[ROOT_DIR=] npm run coverage
 ```

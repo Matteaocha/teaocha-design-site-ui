@@ -1,26 +1,26 @@
-import { PrimaryButton } from '@/ui-common/components/PrimaryButton'
-import { Link } from '@/ui-common/components/Link'
+import { PrimaryButton } from '@packages/ui-common/components/PrimaryButton'
+import { Link } from '@packages/ui-common/components/Link'
 import {
   Panel as Panel,
   PanelType as PanelType,
-} from '@/ui-common/components/Panel'
+} from '@packages/ui-common/components/Panel'
 import {
   ITheme as ITheme,
   ThemeProvider as ThemeProvider,
-} from '@/ui-common/components/ThemeProvider'
-import { History } from 'history'
+} from '@packages/ui-common/components/ThemeProvider'
 import { useState } from 'react'
 import classNames from './SideMenu.scss'
 
 export type SideMenuNavItem = {
+  key: string,
   title: string,
-  href: string,
+  onClick: (e: React.SyntheticEvent) => void,
   disabled?: boolean,
 }
 
 export interface ISideMenuNavItemProps {
   children: string | JSX.Element,
-  onClick: () => void,
+  onClick: (e: React.SyntheticEvent) => void,
   disabled?: boolean,
 }
 
@@ -30,7 +30,7 @@ function SideMenuNavItem(props: ISideMenuNavItemProps): JSX.Element {
       onClick={props.onClick}
       role='menuitem'
       disabled={props.disabled}
-      data-semantic-tag={'SideMenuNavItem'}
+      data-testid={'SideMenuNavItem'}
     >
       {props.children}
     </Link>
@@ -42,58 +42,63 @@ function SideMenuNavItem(props: ISideMenuNavItemProps): JSX.Element {
 export interface ISideMenuProps {
   title: string,
   navItems: SideMenuNavItem[],
-  history: History,
   visible: boolean,
-  theme: ITheme,
+  theme?: ITheme,
 }
 
+/*
+ * @description
+ * Renders a hamburger menu which, when clicked, opens a menu panel from
+ * the left hand side.
+*/
 export function SideMenu(props: ISideMenuProps): JSX.Element {
   const [ isOpen, setMenuOpen ] = useState(false)
   const toggleMenu = () => setMenuOpen(!isOpen)
 
-  let rootClassName = classNames['root']
-  if (props.visible) {
-    rootClassName = `${rootClassName} ${classNames['visible']}`
-  }
-
   return (
     <div
-      data-semantic-tag={'SideMenu'}
-      className={rootClassName}
+      data-testid={'SideMenu'}
+      className={classNames['root']}
     >
-      <PrimaryButton
-        className={classNames['toggle']}
-        iconProps={{ iconName: 'GlobalNavButton' }}
-        onClick={toggleMenu}
-        data-semantic-tag={'SideMenu-toggle'}
-      />
+      {
+        props.visible && (
+          <PrimaryButton
+            className={classNames['toggle']}
+            iconProps={{ iconName: 'GlobalNavButton' }}
+            onClick={toggleMenu}
+            data-testid={'SideMenu-toggle'}
+          />
+        )
+      }
       <ThemeProvider theme={props.theme}>
         <Panel
           onDismiss={toggleMenu}
           type={PanelType.customNear}
           customWidth={'400px'}
-          className={classNames['panel']}
           isOpen={isOpen}
           isBlocking
           isLightDismiss
           hasCloseButton
         >
-          <div className={classNames['content']} >
+          <div
+            className={classNames['content']}
+            data-testid={'SideMenu-panel'}
+          >
             <nav
               aria-labelledby='sidemenu'
-              data-semantic-tag={'SideMenu-navigation'}
+              data-testid={'SideMenu-navigation'}
             >
-              <h2 id='sidemenu' >{props.title}</h2>
+              <h2 id='sidemenu'>{props.title}</h2>
               <ul>
                 {
                   props.navItems.map(
                     navItem => (
-                      <li key={`sidemenuitem-${navItem.title}`}>
+                      <li key={`sidemenuitem-${navItem.key}`}>
                         <SideMenuNavItem
                           onClick={
-                            () => {
+                            (e: React.SyntheticEvent) => {
                               toggleMenu()
-                              props.history.push(navItem.href)
+                              navItem.onClick(e)
                             }
                           }
                           disabled={navItem.disabled}

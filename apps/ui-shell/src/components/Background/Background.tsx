@@ -2,18 +2,18 @@ import {
   Image,
   ImageFit,
 } from '@teaocha/ui-common'
-import { theme } from '@/ui-shell/theme'
+import { theme } from '@apps/ui-shell/theme'
 
 import classNames from './Background.scss'
-import imgBgLeft from '@/ui-shell/assets/background/backgroundLeft.svg'
-import imgBgRight from '@/ui-shell/assets/background/backgroundRight.svg'
-import imgLeaf from '@/ui-shell/assets/background/leaf.svg'
-import imgSteam1 from '@/ui-shell/assets/background/steam1.svg'
-import imgSteam2 from '@/ui-shell/assets/background/steam2.svg'
-import imgSteam3 from '@/ui-shell/assets/background/steam3.svg'
-import imgTable from '@/ui-shell/assets/background/table.svg'
-import imgTeacup from '@/ui-shell/assets/teacup.svg'
-import imgTree from '@/ui-shell/assets/background/tree.svg'
+import imgBgLeft from '@apps/ui-shell/assets/background/backgroundLeft.svg'
+import imgBgRight from '@apps/ui-shell/assets/background/backgroundRight.svg'
+import imgLeaf from '@apps/ui-shell/assets/background/leaf.svg'
+import imgSteam1 from '@apps/ui-shell/assets/background/steam1.svg'
+import imgSteam2 from '@apps/ui-shell/assets/background/steam2.svg'
+import imgSteam3 from '@apps/ui-shell/assets/background/steam3.svg'
+import imgTable from '@apps/ui-shell/assets/background/table.svg'
+import imgTeacup from '@apps/ui-shell/assets/teacup.svg'
+import imgTree from '@apps/ui-shell/assets/background/tree.svg'
 
 const rootStyles = {
   backgroundColor: theme.palette.white,

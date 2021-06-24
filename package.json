@@ -4,12 +4,12 @@
   "description": "Code for the UI of teaochadesign.com",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint ${ROOT_DIR:-apps/* common/*}",
-    "lint-fix": "eslint ${ROOT_DIR:-apps/* common/*} --fix",
+    "lint": "eslint ${ESLINT_ARGS}",
+    "lint-fix": "eslint --fix ${ESLINT_ARGS}",
     "start": "webpack serve",
-    "test": "jest --root-dir ${ROOT_DIR:-.}",
-    "test-watch": "jest --root-dir ${ROOT_DIR:-.} --watch",
-    "test-coverage": "jest --root-dir ${ROOT_DIR:-.} --coverage"
+    "test": "jest ${JEST_ARGS}",
+    "test-watch": "jest --watchAll ${JEST_ARGS}",
+    "test-coverage": "jest --coverage ${JEST_ARGS}"
   },
   "repository": {
     "type": "git",
@@ -18,9 +18,11 @@
   "author": "Matthew Bilton",
   "workspaces": [
     "./apps/*",
-    "./common/*"
+    "./packages/*"
   ],
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^12.0.0",
     "@types/jest": "^26.0.23",
     "@types/react": "^17.0.11",
     "@typescript-eslint/eslint-plugin": "^4.27.0",

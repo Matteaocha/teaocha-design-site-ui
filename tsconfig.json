@@ -12,8 +12,8 @@
     "esModuleInterop": true,
     "baseUrl": ".",
     "paths": {
-      "@/ui-shell/*": ["apps/ui-shell/src/*"],
-      "@/ui-common/*": ["common/ui-common/src/*"],
-    },
+      "@apps/ui-shell/*": ["apps/ui-shell/src/*"],
+      "@packages/ui-common/*": ["packages/ui-common/src/*"]
+    }
   }
 }

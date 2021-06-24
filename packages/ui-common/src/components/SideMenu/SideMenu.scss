@@ -26,9 +26,3 @@
   border-radius: 100px;
   min-width: auto;
 }
-
-.root:not(.visible) {
-  & .toggle {
-    display: none;
-  }
-}
