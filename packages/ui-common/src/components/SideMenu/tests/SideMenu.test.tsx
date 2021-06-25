@@ -6,11 +6,11 @@ import {
   within,
 } from '@testing-library/react'
 import { setIconOptions } from '@/packages/ui-common/src/theming'
-import SideMenu from '../SideMenu'
+import { SideMenu, SideMenuNavItem } from '../SideMenu'
 
 setIconOptions({ disableWarnings: true })
 
-const navItems = [
+const makeNavItems = () => [
   {
     key: 'home',
     title: 'Home',
@@ -24,10 +24,10 @@ const navItems = [
   },
 ]
 
-beforeEach(() => jest.resetAllMocks())
-
 describe('Before opening the menu', () => {
   it("Does not render a menu toggle if visible=false", () => {
+    const navItems = makeNavItems()
+
     render(
       <SideMenu
         title={'Menu'}
@@ -40,6 +40,8 @@ describe('Before opening the menu', () => {
   })
   
   it("Renders a toggle but, until pressed, the menu is closed", () => {
+    const navItems = makeNavItems()
+
     render(
       <SideMenu
         title={'Menu'}
@@ -61,8 +63,11 @@ describe('Before opening the menu', () => {
 
 describe('After opening the menu', () => {
   let panelNav: HTMLElement
+  let navItems: SideMenuNavItem[]
 
-  beforeAll(() => {
+  beforeEach(() => {
+    navItems = makeNavItems()
+
     render(
       <SideMenu
         title={'Menu'}
@@ -88,8 +93,7 @@ describe('After opening the menu', () => {
     expect(navButtons[0]).toHaveTextContent('Home')
     fireEvent.click(navButtons[0])
 
-    // TO DO: Find out why this isn't firing in test mode
-    // expect(navItems[0].onClick).toHaveBeenCalled()
+    expect(navItems[0].onClick).toHaveBeenCalled()
 
     expect(navButtons[1]).toHaveTextContent('Login')
     expect(navButtons[1]).toBeDisabled()

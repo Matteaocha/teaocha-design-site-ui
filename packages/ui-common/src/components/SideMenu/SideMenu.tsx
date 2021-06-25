@@ -117,5 +117,3 @@ export function SideMenu(props: ISideMenuProps): JSX.Element {
     </div>
   )
 }
-
-export default SideMenu

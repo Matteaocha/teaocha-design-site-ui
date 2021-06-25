@@ -16,4 +16,4 @@ export {
   ThemeProvider as ThemeProvider,
 } from './ThemeProvider'
 
-export { default as SideMenu } from './SideMenu'
+export * from './SideMenu'
