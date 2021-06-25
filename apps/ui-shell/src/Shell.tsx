@@ -1,55 +1,55 @@
-import { useHistory } from 'react-router-dom'
-import { themeInverted } from './theme'
-import { Background } from './components'
-import { SideMenu } from '@teaocha/ui-common'
-
-const NAV_ITEMS = [
-  {
-    key: 'home',
-    title: 'Home',
-    href: '/',
-  },
-  {
-    key: 'profile',
-    title: 'Profile',
-    href: '/profile',
-  },
-  {
-    key: 'creations',
-    title: 'Creations',
-    href: '/creations',
-  },
-  {
-    key: 'blog',
-    title: 'Blog',
-    href: '/blog',
-    disabled: true,
-  },
-  {
-    key: 'contact',
-    title: 'Contact',
-    href: '/contact',
-  },
-]
+import { useHistory, useRouteMatch } from 'react-router-dom'
+import {
+  Background,
+  Header,
+  HeaderMode,
+} from './components'
 
 function Shell(): JSX.Element {
   const history = useHistory()
+  const isHome = !!useRouteMatch({ path: '/', exact: true })
 
-  const navItems = NAV_ITEMS.map(navItem => ({
+  const navItems = [
+    {
+      key: 'home',
+      title: 'Home',
+      href: '/',
+      hidden: isHome,
+    },
+    {
+      key: 'profile',
+      title: 'Profile',
+      href: '/profile',
+    },
+    {
+      key: 'creations',
+      title: 'Creations',
+      href: '/creations',
+    },
+    {
+      key: 'blog',
+      title: 'Blog',
+      href: '/blog',
+      disabled: true,
+    },
+    {
+      key: 'contact',
+      title: 'Contact',
+      href: '/contact',
+    },
+  ].map(navItem => ({
     ...navItem,
     onClick: () => {
       history.push(navItem.href)
-    }
+    },
   }))
 
   return (
-    <div>
+    <div data-testid={'Shell-root'}>
       <Background />
-      <SideMenu
-        title={'Menu'}
+      <Header
         navItems={navItems}
-        theme={themeInverted}
-        visible
+        mode={isHome ? HeaderMode.Central : HeaderMode.Top}
       />
     </div>
   )

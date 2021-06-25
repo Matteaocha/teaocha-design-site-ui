@@ -1,0 +1,142 @@
+@import '~@teaocha/ui-common/src/styles/variables.scss';
+
+$headerHeight: 52px;
+
+.root {
+  z-index: 1;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  height: $headerHeight;
+
+  .nav-item[aria-disabled=true] {
+    display: none;
+  }
+}
+
+.background {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  backdrop-filter: blur(5px);
+}
+
+.navigation {
+  display: flex;
+  max-width: 80vw;
+
+  ul {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  .nav-item {
+    margin: 0px 8px;
+  }
+}
+
+.inner-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.root.mode-top {
+  box-shadow: $depth-shadow-8;
+}
+
+.mode-top {
+  .background {
+    opacity: 0.9;
+  }
+
+  .inner-wrapper {
+    padding-left: $headerHeight * 1.6;
+    height: $headerHeight;
+    position: relative;
+    flex-flow: row-reverse nowrap;
+  }
+
+  .navigation {
+    flex: 1;
+    z-index: 1;
+    justify-content: flex-start;
+  }
+
+  .logo {
+    max-width: 250px;
+    height: $headerHeight * 0.8;
+  }
+}
+
+.mode-central {
+  .background {
+    display: none;
+  }
+
+  .inner-wrapper {
+    position: absolute;
+    flex-flow: column;
+
+    top: 25vh;
+    left: 60vw;
+    transform: translate(-50%, -50%);
+
+    .navigation {
+      font-size: 1.7em;
+      justify-content: center;
+
+      ul {
+        justify-content: center;
+      }
+    }
+  
+    .logo {
+      width: 450px;
+      max-height: 130px;
+    }
+
+    @media screen and (max-width: 1000px) {
+      top: 20vh;
+
+      .logo {
+        width: 400px;
+        max-height: 120px;
+      }
+    }
+
+    @media screen and (max-width: 800px) {
+      top: 15vh;
+      left: 50vw;
+
+      .logo {
+        width: 350px;
+      }
+
+      .navigation {
+        font-size: 1.5em;
+      }
+    }
+
+    @media screen and (max-width: 500px) {
+      left: 50vw;
+
+      .logo {
+        width: 250px;
+      }
+
+      .navigation {
+        font-size: 1.4em;
+      }
+    }
+  }
+}
