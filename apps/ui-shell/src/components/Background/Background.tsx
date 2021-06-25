@@ -7,13 +7,11 @@ import { theme } from '@/apps/ui-shell/src/theme'
 import classNames from './Background.scss'
 import imgBgLeft from '@/apps/ui-shell/assets/background/backgroundLeft.svg'
 import imgBgRight from '@/apps/ui-shell/assets/background/backgroundRight.svg'
-import imgLeaf from '@/apps/ui-shell/assets/background/leaf.svg'
 import imgSteam1 from '@/apps/ui-shell/assets/background/steam1.svg'
 import imgSteam2 from '@/apps/ui-shell/assets/background/steam2.svg'
 import imgSteam3 from '@/apps/ui-shell/assets/background/steam3.svg'
 import imgTable from '@/apps/ui-shell/assets/background/table.svg'
 import imgTeacup from '@/apps/ui-shell/assets/teacup.svg'
-import imgTree from '@/apps/ui-shell/assets/background/tree.svg'
 
 const rootStyles = {
   backgroundColor: theme.palette.white,
@@ -28,7 +26,7 @@ const rootStyles = {
 } as React.CSSProperties
 
 // Deals with background imagery, animations, dynamic loading etc.
-function Background(): JSX.Element {
+export function Background(): JSX.Element {
   return (
     <div
       style={rootStyles}
@@ -47,20 +45,8 @@ function Background(): JSX.Element {
         aria-hidden={true}
       />
       <Image 
-        src={imgLeaf}
-        className={classNames['leaf']}
-        imageFit={ImageFit.contain}
-        aria-hidden={true}
-      />
-      <Image 
         src={imgTable}
         className={classNames['table']}
-        imageFit={ImageFit.contain}
-        aria-hidden={true}
-      />
-      <Image 
-        src={imgTree}
-        className={classNames['tree']}
         imageFit={ImageFit.contain}
         aria-hidden={true}
       />
