@@ -22,6 +22,12 @@ const makeNavItems = () => [
     onClick: jest.fn(),
     disabled: true,
   },
+  {
+    key: 'about',
+    title: 'About',
+    onClick: jest.fn(),
+    hidden: true,
+  },
 ]
 
 describe('Before opening the menu', () => {
@@ -86,18 +92,22 @@ describe('After opening the menu', () => {
     ).toHaveTextContent('Menu')
   })
 
-  it("Renders nav buttons which respond to clicks", () => {
-    const navButtons = within(panelNav).getAllByTestId('SideMenuNavItem')
-    expect(navButtons).toHaveLength(2)
+  it("Renders all but hidden nav elements", () => {
+    expect(within(panelNav).getAllByTestId('SideMenuNavItem')).toHaveLength(2)
+    expect(within(panelNav).queryByText('About')).toBeNull()
+  })
 
-    expect(navButtons[0]).toHaveTextContent('Home')
-    fireEvent.click(navButtons[0])
+  it("Renders clickable nav items when they ARE NOT disabled", () => {
+    const activeNavButton = within(panelNav).getByText('Home')
+    fireEvent.click(activeNavButton)
 
     expect(navItems[0].onClick).toHaveBeenCalled()
+  })
 
-    expect(navButtons[1]).toHaveTextContent('Login')
-    expect(navButtons[1]).toBeDisabled()
-    fireEvent.click(navButtons[1])
+  it("Renders non-clickable nav items when they ARE disabled", () => {
+    const inactiveNavButton = within(panelNav).getByText('Login')
+    fireEvent.click(inactiveNavButton)
+
     expect(navItems[1].onClick).not.toHaveBeenCalled()
   })
 })

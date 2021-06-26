@@ -16,6 +16,7 @@ export type SideMenuNavItem = {
   title: string,
   onClick: (e: React.SyntheticEvent) => void,
   disabled?: boolean,
+  hidden?: boolean,
 }
 
 export interface ISideMenuNavItemProps {
@@ -55,6 +56,8 @@ export function SideMenu(props: ISideMenuProps): JSX.Element {
   const [ isOpen, setMenuOpen ] = useState(false)
   const toggleMenu = () => setMenuOpen(!isOpen)
 
+  const navItems = props.navItems.filter(x => !x.hidden)
+
   return (
     <div
       data-testid={'SideMenu'}
@@ -91,7 +94,7 @@ export function SideMenu(props: ISideMenuProps): JSX.Element {
               <h2 id='sidemenu'>{props.title}</h2>
               <ul>
                 {
-                  props.navItems.map(
+                  navItems.map(
                     navItem => (
                       <li key={`sidemenuitem-${navItem.key}`}>
                         <SideMenuNavItem
