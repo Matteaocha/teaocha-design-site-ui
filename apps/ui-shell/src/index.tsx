@@ -5,14 +5,14 @@ import {
   loadTheme,
 } from '@teaocha/ui-common'
 import { theme } from './theme'
-import Shell from './Shell'
+import { App } from './App'
 
 loadTheme(theme)
 initializeIcons()
 
 ReactDOM.render(
   <BrowserRouter>
-    <Shell/>
+    <App/>
   </BrowserRouter>
   ,document.getElementById('root')
 )

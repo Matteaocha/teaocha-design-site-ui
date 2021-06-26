@@ -9,10 +9,6 @@ $headerHeight: 52px;
   left: 0px;
   right: 0px;
   height: $headerHeight;
-
-  .nav-item[aria-disabled=true] {
-    display: none;
-  }
 }
 
 .background {
