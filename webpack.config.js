@@ -19,7 +19,7 @@ let plugins = [
   }),
   new HtmlWebpackPlugin({
     filename: 'index.html',
-    template: 'index.html' ,
+    template: env.NODE_ENV === 'production' ? 'index.html' : 'index.dev.html',
   }),
   new CopyPlugin({
     patterns: [
