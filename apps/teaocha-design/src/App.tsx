@@ -5,15 +5,14 @@ import {
   useHistory,
   useRouteMatch,
 } from 'react-router-dom'
+import { Background } from './components/Background'
 import {
-  Background,
   Header,
   HeaderMode,
-} from './components'
-import {
-  NotFound,
-} from './scenes'
+} from './components/Header'
+import { NotFound } from './scenes/NotFound'
 import { redirects, routes } from './routes'
+import classNames from './App.scss'
 
 /*
 @description
@@ -38,13 +37,13 @@ export function App(): JSX.Element {
   )
 
   return (
-    <div data-testid={'Shell-root'}>
+    <div data-testid={'TeaochaDesign-App-root'}>
       <Background />
       <Header
         navItems={navItems}
         mode={isHome ? HeaderMode.Central : HeaderMode.Top}
       />
-      <main>
+      <main className={classNames['main']} >
         <Switch>
           {
             Object.values(redirects).map(

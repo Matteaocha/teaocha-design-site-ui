@@ -1,0 +1,15 @@
+@import '~@teaocha/ui-common/src/styles/variables.scss';
+
+.root {
+  box-shadow: $depth-shadow-8;
+  background-color: #ffffff;
+
+  width: 80%;
+  margin: auto;
+  max-width: 800px;
+  padding: 20px 32px 52px;
+
+  h1, h2 {
+    text-align: center;
+  }
+}

@@ -13,24 +13,16 @@ import imgSteam3 from '@/apps/teaocha-design/assets/background/steam3.svg'
 import imgTable from '@/apps/teaocha-design/assets/background/table.svg'
 import imgTeacup from '@/apps/teaocha-design/assets/teacup.svg'
 
-const rootStyles = {
-  backgroundColor: theme.palette.white,
-  position: 'fixed',
-  width: '100vw',
-  height: '100vh',
-  top: 0,
-  bottom: 0,
-  left: 0,
-  right: 0,
-  overflow: 'hidden',
-} as React.CSSProperties
-
-// Deals with background imagery, animations, dynamic loading etc.
+/*
+@background
+Deals with background imagery, animations, dynamic loading etc.
+*/
 export function Background(): JSX.Element {
   return (
     <div
-      style={rootStyles}
       data-semantic-tag={'Background'}
+      className={classNames['root']}
+      style={{ backgroundColor: theme.palette.white }}
     >
       <Image
         src={imgBgLeft}

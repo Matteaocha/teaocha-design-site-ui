@@ -82,6 +82,18 @@
   }
 }
 
+.root {
+  position: fixed;
+  z-index: -10;
+  width: 100vw;
+  height: 100vh;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  overflow: hidden;
+}
+
 .bg-left {
   position: absolute;
   bottom: -10px;

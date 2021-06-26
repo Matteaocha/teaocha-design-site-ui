@@ -1,9 +1,7 @@
-import {
-  Contact,
-  Creations,
-  Home,
-  Profile,
-} from './scenes'
+import { Contact } from './scenes/Contact'
+import { Creations } from './scenes/Creations'
+import { Home } from './scenes/Home'
+import { Profile } from './scenes/Profile'
 
 export type AppRoute = {
   key: string,
