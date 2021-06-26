@@ -2,6 +2,7 @@ import { Contact } from './scenes/Contact'
 import { Creations } from './scenes/Creations'
 import { Home } from './scenes/Home'
 import { Profile } from './scenes/Profile'
+import { translate } from './i18n'
 
 export type AppRoute = {
   key: string,
@@ -24,33 +25,33 @@ export type AppRedirect = {
 export const routes: { [name: string]: AppRoute } = {
   home: {
     key: 'home',
-    title: 'Home',
+    title: translate('pages.home.pageTitle'),
     href: '/',
     exact: true,
     component: Home,
   },
   profile: {
     key: 'profile',
-    title: 'Profile',
+    title: translate('pages.profile.pageTitle'),
     href: '/profile',
     component: Profile,
   },
   creations: {
     key: 'creations',
-    title: 'Creations',
+    title: translate('pages.creations.pageTitle'),
     href: '/creations',
     component: Creations,
   },
   blog: {
     key: 'blog',
-    title: 'Blog',
+    title: translate('pages.blog.pageTitle'),
     href: '/blog',
     disabled: true,
     hidden: true,
   },
   contact: {
     key: 'contact',
-    title: 'Contact',
+    title: translate('pages.contact.pageTitle'),
     href: '/contact',
     component: Contact,
   }

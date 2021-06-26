@@ -1,4 +1,5 @@
 import { MainContent } from '@/apps/teaocha-design/src/components/MainContent'
+import { translate } from '@/apps/teaocha-design/src/i18n'
 
 /*
 @description
@@ -8,7 +9,7 @@ export function Contact(): JSX.Element {
   return (
     <MainContent>
       <div data-testid={'Scene-Contact'}>
-        <h1>Contact</h1>
+        <h1>{translate('pages.contact.pageTitle')}</h1>
       </div>
     </MainContent>
   )

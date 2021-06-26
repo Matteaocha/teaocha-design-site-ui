@@ -1,4 +1,5 @@
 import { MainContent } from '@/apps/teaocha-design/src/components/MainContent'
+import { translate } from '@/apps/teaocha-design/src/i18n'
 
 /*
 @description
@@ -8,7 +9,7 @@ export function NotFound(): JSX.Element {
   return (
     <MainContent>
       <div data-testid={'Scene-NotFound'}>
-        <h1>Page Not Found</h1>
+        <h1>{translate('pages.notFound.pageTitle')}</h1>
       </div>
     </MainContent>
   )

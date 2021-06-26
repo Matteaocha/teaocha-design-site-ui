@@ -6,6 +6,7 @@ import {
   SideMenu,
 } from '@teaocha/ui-common'
 import { theme, themeInverted } from '@/apps/teaocha-design/src/theme'
+import { translate } from '@/apps/teaocha-design/src/i18n'
 import _classNames from './Header.scss'
 import logo from '@/apps/teaocha-design/assets/logos/TeaochaDesign-logo.svg'
 
@@ -64,7 +65,7 @@ export function Header(props: HeaderProps): JSX.Element {
             style={{ backgroundColor: theme.palette.white }}
           />
           <SideMenu
-            title={'Menu'}
+            title={translate('sideMenu.title')}
             navItems={navItems}
             theme={themeInverted}
             visible={props.mode === HeaderMode.Top}
@@ -73,11 +74,11 @@ export function Header(props: HeaderProps): JSX.Element {
             className={classNames['logo']}
             src={logo}
             imageFit={ImageFit.contain}
-            alt={'Logo for Teaocha Design'}
+            alt={translate('header.images.logo')}
           />
           <nav
             className={classNames['navigation']}
-            aria-label={'Main navigation'}
+            aria-label={translate('header.navigation')}
             data-testid={'Header-navigation'}
           >
             <ul>
