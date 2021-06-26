@@ -2,16 +2,16 @@ import {
   Image,
   ImageFit,
 } from '@teaocha/ui-common'
-import { theme } from '@/apps/ui-shell/src/theme'
+import { theme } from '@/apps/teaocha-design/src/theme'
 
 import classNames from './Background.scss'
-import imgBgLeft from '@/apps/ui-shell/assets/background/backgroundLeft.svg'
-import imgBgRight from '@/apps/ui-shell/assets/background/backgroundRight.svg'
-import imgSteam1 from '@/apps/ui-shell/assets/background/steam1.svg'
-import imgSteam2 from '@/apps/ui-shell/assets/background/steam2.svg'
-import imgSteam3 from '@/apps/ui-shell/assets/background/steam3.svg'
-import imgTable from '@/apps/ui-shell/assets/background/table.svg'
-import imgTeacup from '@/apps/ui-shell/assets/teacup.svg'
+import imgBgLeft from '@/apps/teaocha-design/assets/background/backgroundLeft.svg'
+import imgBgRight from '@/apps/teaocha-design/assets/background/backgroundRight.svg'
+import imgSteam1 from '@/apps/teaocha-design/assets/background/steam1.svg'
+import imgSteam2 from '@/apps/teaocha-design/assets/background/steam2.svg'
+import imgSteam3 from '@/apps/teaocha-design/assets/background/steam3.svg'
+import imgTable from '@/apps/teaocha-design/assets/background/table.svg'
+import imgTeacup from '@/apps/teaocha-design/assets/teacup.svg'
 
 const rootStyles = {
   backgroundColor: theme.palette.white,

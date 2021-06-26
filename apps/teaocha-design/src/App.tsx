@@ -33,7 +33,7 @@ export function App(): JSX.Element {
       // The home page is more of a splash-screen so it doesn't
       // make sense for that to be a visible route when the user is
       // on that page.
-      hidden: route.key === 'home' && isHome,
+      hidden: route.hidden || (route.key === 'home' && isHome),
     })
   )
 

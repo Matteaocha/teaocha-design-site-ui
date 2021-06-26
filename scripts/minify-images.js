@@ -7,8 +7,8 @@ const root = path.resolve(__dirname, '..')
 
 const manifest = [
   {
-    match: `${root}/apps/ui-shell/assets/logos/*.{jpg,png}`,
-    destination: `${root}/apps/ui-shell/assets/logos/minified`,
+    match: `${root}/apps/teaocha-design/assets/logos/*.{jpg,png}`,
+    destination: `${root}/apps/teaocha-design/assets/logos/minified`,
   }
 ]
 

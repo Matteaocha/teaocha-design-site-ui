@@ -1,5 +1,5 @@
 {
-  "name": "@teaocha/ui-shell",
+  "name": "@teaocha/teaocha-design",
   "version": "1.0.0",
   "main": "src/index.tsx",
   "devDependencies": {

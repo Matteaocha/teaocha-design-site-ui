@@ -38,7 +38,7 @@ if (env.NODE_ENV === 'production') {
 //--------------------------------------------------------------------------------
 
 module.exports = {
-  entry: './apps/ui-shell/src/index.tsx',
+  entry: './apps/teaocha-design/src/index.tsx',
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
     plugins: [

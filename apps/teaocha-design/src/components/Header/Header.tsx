@@ -5,9 +5,9 @@ import {
   memoizeFunction,
   SideMenu,
 } from '@teaocha/ui-common'
-import { theme, themeInverted } from '@/apps/ui-shell/src/theme'
+import { theme, themeInverted } from '@/apps/teaocha-design/src/theme'
 import _classNames from './Header.scss'
-import logo from '@/apps/ui-shell/assets/logos/TeaochaDesign-logo.svg'
+import logo from '@/apps/teaocha-design/assets/logos/TeaochaDesign-logo.svg'
 
 export type HeaderNavItem = {
   key: string,

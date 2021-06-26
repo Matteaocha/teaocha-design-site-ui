@@ -8,19 +8,29 @@ export NODE_DEV_SHELL_IMAGE_NAME=$(PROJECT_NAME)-node-dev-env
 
 install:
 	make node-dev-shell-image
-	docker run -it --rm $(NODE_DEV_SHELL_IMAGE_NAME) npm install
+	docker run -it --rm \
+		-v $(PROJECT_ROOT):/app \
+		$(NODE_DEV_SHELL_IMAGE_NAME) npm install
 
 start:
-	docker run -t --rm $(NODE_DEV_SHELL_IMAGE_NAME) npm run start
+	docker run -it --rm \
+		-v $(PROJECT_ROOT):/app \
+		$(NODE_DEV_SHELL_IMAGE_NAME) npm run start
 
 lint:
-	docker run -t --rm $(NODE_DEV_SHELL_IMAGE_NAME) npm run lint
+	docker run -it --rm \
+		-v $(PROJECT_ROOT):/app \
+		$(NODE_DEV_SHELL_IMAGE_NAME) npm run lint
 
 test-unit:
-	docker run -t --rm $(NODE_DEV_SHELL_IMAGE_NAME) npm run test
+	docker run -it --rm \
+		-v $(PROJECT_ROOT):/app \
+		$(NODE_DEV_SHELL_IMAGE_NAME) npm run test
 
 coverage:
-	docker run -t --rm $(NODE_DEV_SHELL_IMAGE_NAME) npm run test
+	docker run -it --rm \
+		-v $(PROJECT_ROOT):/app \
+		$(NODE_DEV_SHELL_IMAGE_NAME) npm run test-coverage
 
 # ---------------------------------------------
 
