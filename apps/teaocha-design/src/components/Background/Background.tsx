@@ -5,13 +5,13 @@ import {
 import { theme } from '@/apps/teaocha-design/src/theme'
 
 import classNames from './Background.scss'
-import imgBgLeft from '@/apps/teaocha-design/assets/background/backgroundLeft.svg'
-import imgBgRight from '@/apps/teaocha-design/assets/background/backgroundRight.svg'
-import imgSteam1 from '@/apps/teaocha-design/assets/background/steam1.svg'
-import imgSteam2 from '@/apps/teaocha-design/assets/background/steam2.svg'
-import imgSteam3 from '@/apps/teaocha-design/assets/background/steam3.svg'
-import imgTable from '@/apps/teaocha-design/assets/background/table.svg'
-import imgTeacup from '@/apps/teaocha-design/assets/teacup.svg'
+import imgBgLeft from '@/apps/teaocha-design/assets/imagesbackground/backgroundLeft.svg'
+import imgBgRight from '@/apps/teaocha-design/assets/imagesbackground/backgroundRight.svg'
+import imgSteam1 from '@/apps/teaocha-design/assets/imagesbackground/steam1.svg'
+import imgSteam2 from '@/apps/teaocha-design/assets/imagesbackground/steam2.svg'
+import imgSteam3 from '@/apps/teaocha-design/assets/imagesbackground/steam3.svg'
+import imgTable from '@/apps/teaocha-design/assets/imagesbackground/table.svg'
+import imgTeacup from '@/apps/teaocha-design/assets/imagesteacup.svg'
 
 /*
 @background
