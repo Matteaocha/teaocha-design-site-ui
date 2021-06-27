@@ -8,7 +8,7 @@ import {
 import { theme, themeInverted } from '@/apps/teaocha-design/src/theme'
 import { translate } from '@/apps/teaocha-design/src/i18n'
 import _classNames from './Header.scss'
-import logo from '@/apps/teaocha-design/assets/imageslogos/TeaochaDesign-logo.svg'
+import logo from '@/apps/teaocha-design/assets/images/logos/TeaochaDesign-logo.svg'
 
 export type HeaderNavItem = {
   key: string,
