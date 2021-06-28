@@ -118,7 +118,7 @@ export function ProfileItem(props: IProfileItem): JSX.Element {
         <div className={classNames['sub-header']}>
           {
             props.link && (
-              <Link href={props.link.href} >
+              <Link href={props.link.href} target={'blank'}>
                 {props.link.text || props.link.href}
               </Link>
             )

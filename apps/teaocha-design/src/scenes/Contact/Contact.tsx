@@ -16,7 +16,10 @@ export function Contact(): JSX.Element {
           {translate('pages.contact.message')}
         </p>
         <div className={classNames['links']}>
-          <Link href={'https://www.linkedin.com/in/matthew-bilton-463111122'}>
+          <Link
+            href={'https://www.linkedin.com/in/matthew-bilton-463111122'}
+            target={'blank'}
+          >
             {'LinkedIn'}
           </Link>
         </div>

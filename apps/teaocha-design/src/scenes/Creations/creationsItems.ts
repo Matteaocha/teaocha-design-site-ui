@@ -12,7 +12,7 @@ import grokLockLogo from '@/apps/teaocha-design/assets/images/logos/GrokLock-log
 export const apps = [
   {
     title: 'Creative Mission',
-    href: 'www.groklock.com/creativemission',
+    href: 'http://www.groklock.com/creativemission',
     image: cmLogo,
     fallbackIconName: 'PreviewLink',
     description: [
@@ -25,7 +25,7 @@ export const apps = [
   },
   {
     title: 'Hana Hou',
-    href: 'www.groklock.com/hanahou',
+    href: 'http://www.groklock.com/hanahou',
     image: hhLogo,
     fallbackIconName: 'PreviewLink',
     description: [
@@ -41,7 +41,7 @@ export const apps = [
 export const arts = [
   {
     title: 'Grok Lock',
-    href: 'www.groklock.com',
+    href: 'http://www.groklock.com',
     image: grokLockLogo,
     fallbackIconName: 'Brush',
     description: [

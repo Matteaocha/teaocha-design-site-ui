@@ -60,6 +60,7 @@ export function CreationsItem(props: ICreationsItem): JSX.Element {
           <Link
             href={props.href}
             data-testid={'CreationsItem-link'}
+            target={'blank'}
           >
             {translate('pages.creations.item.linkLabel')}
           </Link>

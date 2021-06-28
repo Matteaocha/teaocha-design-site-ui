@@ -14,7 +14,8 @@ export const experience = [
   {
     title: 'Eagle Genomics Ltd.',
     link: {
-      href: 'www.eaglegenomics.com',
+      href: 'https://www.eaglegenomics.com',
+      text: 'www.eaglegenomics.com',
     },
     image: eagleLogo,
     fallbackIconName: 'Keyboard',
@@ -77,7 +78,8 @@ export const experience = [
   {
     title: 'Wordwall',
     link: {
-      href: 'www.wordwall.co.uk',
+      href: 'https://www.wordwall.net',
+      text: 'www.wordwall.net',
     },
     fallbackIconName: 'Keyboard',
     image: wordwallLogo,
@@ -104,7 +106,8 @@ export const experience = [
   {
     title: 'JET Programme',
     link: {
-      href: 'www.jetprogramme.org',
+      href: 'http://www.jetprogramme.org',
+      text: 'www.jetprogramme.org',
     },
     fallbackIconName: 'WhiteBoardApp16',
     image: jetLogo,
@@ -130,7 +133,8 @@ export const education = [
   {
     title: 'Univeristy of Southampton',
     link: {
-      href: 'www.southampton.ac.uk',
+      href: 'https://www.southampton.ac.uk',
+      text: 'www.southampton.ac.uk',
     },
     fallbackIconName: 'Education',
     sections: [
@@ -156,7 +160,8 @@ export const education = [
   {
     title: 'Japanese Language Proficiency Test',
     link: {
-      href: 'www.jlpt.jp',
+      href: 'http://www.jlpt.jp',
+      text: 'www.jlpt.jp',
     },
     fallbackIconName: 'Certificate',
     sections: [
@@ -179,7 +184,8 @@ export const projects = [
   {
     title: 'Grok Lock - Hill Shizuki',
     link: {
-      href: 'www.groklock.com',
+      href: 'http://www.groklock.com',
+      text: 'www.groklock.com',
     },
     fallbackIconName: 'MusicInCollectionFill',
     image: grokLockLogo,
