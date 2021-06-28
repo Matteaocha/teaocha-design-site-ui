@@ -18,6 +18,7 @@ export type AppStrings = {
     },
     contact: {
       pageTitle: string,
+      message: string,
     },
     home: {
       pageTitle: string,
