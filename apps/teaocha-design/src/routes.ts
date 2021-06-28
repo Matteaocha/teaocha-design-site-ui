@@ -28,6 +28,7 @@ export const routes: { [name: string]: AppRoute } = {
     title: translate('pages.home.pageTitle'),
     href: '/',
     exact: true,
+    hidden: true,
     component: Home,
   },
   profile: {

@@ -40,11 +40,17 @@ function SideMenuNavItem(props: ISideMenuNavItemProps): JSX.Element {
 
 //--------------------------------------------------------------------------------
 
+export enum SideMenuToggleShape {
+  Square,
+  Bubble,
+} 
+
 export interface ISideMenuProps {
   title: string,
   navItems: SideMenuNavItem[],
   visible: boolean,
   theme?: ITheme,
+  toggleShape?: SideMenuToggleShape,
 }
 
 /*
@@ -58,6 +64,11 @@ export function SideMenu(props: ISideMenuProps): JSX.Element {
 
   const navItems = props.navItems.filter(x => !x.hidden)
 
+  let toggleShapeClass = classNames['toggle-shape-square']
+  if (props.toggleShape === SideMenuToggleShape.Bubble) {
+    toggleShapeClass = classNames['toggle-shape-bubble']
+  }
+
   return (
     <div
       data-testid={'SideMenu'}
@@ -66,7 +77,7 @@ export function SideMenu(props: ISideMenuProps): JSX.Element {
       {
         props.visible && (
           <PrimaryButton
-            className={classNames['toggle']}
+            className={`${classNames['toggle']} ${toggleShapeClass}`}
             iconProps={{ iconName: 'GlobalNavButton' }}
             onClick={toggleMenu}
             data-testid={'SideMenu-toggle'}

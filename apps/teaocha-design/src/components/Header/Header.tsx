@@ -4,10 +4,12 @@ import {
   Link,
   memoizeFunction,
   SideMenu,
+  SideMenuToggleShape,
 } from '@teaocha/ui-common'
 import { theme, themeInverted } from '@/apps/teaocha-design/src/theme'
 import { translate } from '@/apps/teaocha-design/src/i18n'
 import _classNames from './Header.scss'
+import teacup from '@/apps/teaocha-design/assets/images/teacup.svg'
 import logo from '@/apps/teaocha-design/assets/images/logos/TeaochaDesign-logo.svg'
 
 export type HeaderNavItem = {
@@ -69,13 +71,25 @@ export function Header(props: HeaderProps): JSX.Element {
             navItems={navItems}
             theme={themeInverted}
             visible={props.mode === HeaderMode.Top}
+            toggleShape={SideMenuToggleShape.Bubble}
           />
-          <Image
-            className={classNames['logo']}
-            src={logo}
-            imageFit={ImageFit.contain}
-            alt={translate('header.images.logo')}
-          />
+          <div className={classNames['logo-images']}>
+            {
+              props.mode === HeaderMode.Top && (
+                <Image
+                  src={teacup}
+                  className={classNames['teacup']}
+                  imageFit={ImageFit.contain}
+                />
+              )
+            }
+            <Image
+              className={classNames['logo']}
+              src={logo}
+              imageFit={ImageFit.contain}
+              alt={translate('header.images.logo')}
+            />
+          </div>
           <nav
             className={classNames['navigation']}
             aria-label={translate('header.navigation')}
