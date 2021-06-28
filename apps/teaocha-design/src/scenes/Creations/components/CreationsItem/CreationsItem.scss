@@ -1,0 +1,51 @@
+@import '~@teaocha/ui-common/src/styles/variables.scss';
+@import '~@/apps/teaocha-design/src/styles/fonts.scss';
+
+.creations-item {
+  display: flex;
+  flex-flow: row nowrap;
+
+  @media screen and (max-width: $screen-max-lg) {
+    flex-flow: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.logo-or-icon {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  width: 100px;
+  max-height: 150px;
+
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  .logo {
+    & img {
+      object-position: top;
+    }
+  }
+
+  .icon {
+    font-size: 4em;
+  }
+
+  @media screen and (max-width: $screen-max-lg) {
+    height: 80px;
+    width: auto;
+  }
+}
+
+.main-content {
+  flex: 1;
+  padding-left: 40px;
+
+  @media screen and (max-width: $screen-max-lg) {
+    padding-left: 0px;
+  }
+}
+
+.description {
+}

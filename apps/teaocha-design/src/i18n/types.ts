@@ -5,6 +5,16 @@ export type AppStrings = {
     },
     creations: {
       pageTitle: string,
+      pageDescription: string,
+      apps: {
+        title: string,
+      },
+      arts: {
+        title: string,
+      },
+      item: {
+        linkLabel: string,
+      }
     },
     contact: {
       pageTitle: string,

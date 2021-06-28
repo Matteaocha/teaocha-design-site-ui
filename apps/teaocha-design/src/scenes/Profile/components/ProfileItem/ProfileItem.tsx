@@ -113,12 +113,7 @@ export function ProfileItem(props: IProfileItem): JSX.Element {
             />
         }
       </div>
-      <div
-        className={classNames['main-content']}
-        style={{
-          borderBottomColor: theme.palette.neutralLight,
-        }}
-      >
+      <div className={classNames['main-content']}>
         <h3>{props.title}</h3>
         <div className={classNames['sub-header']}>
           {

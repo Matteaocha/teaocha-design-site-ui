@@ -7,6 +7,19 @@ export const enUS: AppStrings = {
     },
     creations: {
       pageTitle: 'Creations',
+      pageDescription: `
+        On this page you'll find some external links to some of
+        the things I've created over the years (or am still working on).
+      `,
+      apps: {
+        title: 'Apps',
+      },
+      arts: {
+        title: 'Arts',
+      },
+      item: {
+        linkLabel: 'View page',
+      }
     },
     contact: {
       pageTitle: 'Contact',
