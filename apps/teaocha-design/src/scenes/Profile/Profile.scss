@@ -1,0 +1,29 @@
+.root {
+  ul {
+    margin: 0px;
+    padding: 0px;
+  }
+
+  li {
+    list-style: none;
+    margin: 0px 0px 16px;
+  }
+
+  section h2 {
+    margin: 52px 0px;
+  }
+}
+
+.profile-picture {
+  $profilePicSize: 160px;
+
+  margin: auto;
+  width: $profilePicSize;
+  height: $profilePicSize;
+  border-radius: $profilePicSize * 2;
+}
+
+.introduction {
+  text-align: center;
+  margin-bottom: 50px;
+}

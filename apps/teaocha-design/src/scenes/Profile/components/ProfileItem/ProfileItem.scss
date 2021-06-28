@@ -1,0 +1,90 @@
+@import '~@teaocha/ui-common/src/styles/variables.scss';
+@import '~@/apps/teaocha-design/src/styles/fonts.scss';
+
+.profile-item {
+  display: flex;
+  flex-flow: row nowrap;
+
+  @media screen and (max-width: $screen-max-lg) {
+    flex-flow: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.logo-or-icon {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  width: 100px;
+  max-height: 200px;
+
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  .logo {
+    & img {
+      object-position: top;
+    }
+  }
+
+  .icon {
+    font-size: 4em;
+  }
+
+  @media screen and (max-width: $screen-max-lg) {
+    height: 80px;
+    width: auto;
+  }
+}
+
+.main-content {
+  flex: 1;
+  padding-left: 40px;
+
+  .sub-header {
+    margin-bottom: 16px;
+  }
+
+  ul {
+    margin: 0px;
+    padding: 0px;
+  }
+
+  li {
+    list-style: none;
+    margin: 0px 0px 16px;
+  }
+
+  @media screen and (max-width: $screen-max-lg) {
+    padding-left: 0px;
+  }
+}
+
+.item-section {
+  margin-top: 32px;
+
+  &:nth-last-child(1) {
+    margin-bottom: 32px;
+  }
+}
+
+.duration {
+  font-style: italic;
+  font-weight: $font-weight-light;
+
+  & span {
+    &:nth-child(4)::before {
+      content: "\00B7";
+      margin: 0px 5px;
+    }
+  }
+}
+
+.location {
+  font-style: italic;
+  font-weight: $font-weight-light;
+}
+
+.description {
+}

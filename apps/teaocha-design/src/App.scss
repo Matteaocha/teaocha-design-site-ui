@@ -1,3 +1,23 @@
+@import './styles/fonts.scss';
+
 .main {
   margin-top: 80px;
+
+  h1 {
+    font-size: $font-size-su;
+  }
+
+  h2 {
+    font-size: $font-size-xxl;
+    text-underline-offset: 4px;
+    text-decoration: underline;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: $headerFont;
+  }
+
+  p, span, div {
+    font-family: $contentFont;
+  }
 }

@@ -11,6 +11,7 @@ export {
   PanelType as PanelType,
 } from './Panel'
 export { PrimaryButton as PrimaryButton } from './PrimaryButton'
+export { Separator as Separator } from './Separator'
 export {
   ITheme as ITheme,
   ThemeProvider as ThemeProvider,

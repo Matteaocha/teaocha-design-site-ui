@@ -6,6 +6,7 @@ import {
 } from '@teaocha/ui-common'
 import { theme } from './theme'
 import { App } from './App'
+import './styles/initialize.scss'
 
 loadTheme(theme)
 initializeIcons()

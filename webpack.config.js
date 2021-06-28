@@ -88,10 +88,10 @@ module.exports = {
               // `resourceQuery` - `?foo=bar`
 
               if (env.NODE_ENV === 'development') {
-                return '[path][name].[ext]'
+                return 'images/[name].[ext]'
               }
 
-              return '[path][name]_[contenthash].[ext]'
+              return 'images/[name]_[contenthash].[ext]'
             },
           },
         },

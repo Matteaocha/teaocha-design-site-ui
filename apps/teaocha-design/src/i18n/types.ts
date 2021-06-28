@@ -17,6 +17,30 @@ export type AppStrings = {
     },
     profile: {
       pageTitle: string,
+      item: {
+        roleLabel: string,
+        durationLabel: string,
+        durationUntilDefault: string,
+        locationLabel: string,
+        descriptionLabel: string,
+      },
+      introduction: {
+        title: string,
+        p1: string,
+        p2: string,
+      },
+      experience: {
+        title: string,
+      },
+      education: {
+        title: string,
+      },
+      projects: {
+        title: string,
+      },
+      images: {
+        me: string,
+      }
     },
   },
   header: {
