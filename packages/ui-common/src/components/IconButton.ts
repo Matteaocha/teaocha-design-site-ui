@@ -1,1 +1,1 @@
-export { IconButton as IconButton } from '@fluentui/react'
+export { IconButton } from '@fluentui/react'

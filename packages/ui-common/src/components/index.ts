@@ -1,20 +1,11 @@
-export { Icon as Icon } from './Icon'
-export { IconButton as IconButton } from './IconButton'
-export {
-  Image as Image,
-  ImageFit as ImageFit,
-} from './Image'
-export { Link as Link } from './Link'
-export { Overlay as Overlay } from './Overlay'
-export {
-  Panel as Panel,
-  PanelType as PanelType,
-} from './Panel'
-export { PrimaryButton as PrimaryButton } from './PrimaryButton'
-export { Separator as Separator } from './Separator'
-export {
-  ITheme as ITheme,
-  ThemeProvider as ThemeProvider,
-} from './ThemeProvider'
-
+export * from './Icon'
+export *from './IconButton'
+export * from './Image'
+export * from './Link'
+export * from './Overlay'
+export * from './Panel'
+export * from './PrimaryButton'
+export * from './ResizeGroup'
+export * from './Separator'
 export * from './SideMenu'
+export * from './ThemeProvider'

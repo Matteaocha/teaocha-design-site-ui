@@ -1,1 +1,1 @@
-export { PrimaryButton as PrimaryButton } from '@fluentui/react'
+export { PrimaryButton } from '@fluentui/react'

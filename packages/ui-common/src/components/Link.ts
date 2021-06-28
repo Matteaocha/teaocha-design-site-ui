@@ -1,1 +1,1 @@
-export { Link as Link } from '@fluentui/react'
+export { Link } from '@fluentui/react'
