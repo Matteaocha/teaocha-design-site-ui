@@ -1,9 +1,14 @@
 const path = require('path')
+const zlib = require("zlib")
 const webpack = require('webpack')
 const CompressionPlugin = require("compression-webpack-plugin")
+const TerserPlugin = require("terser-webpack-plugin")
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin')
 const CopyPlugin = require('copy-webpack-plugin')
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
+const { getExternals } = require('./config/externals')
+const { makeHTMLSubstitutions } = require('./config/html-substitutions')
 
 const env = {
   ASSET_PATH: process.env.ASSET_PATH || '/',
@@ -11,7 +16,12 @@ const env = {
   PORT: process.env.PORT || '8080',
 }
 
+const isProduction = (env.NODE_ENV === 'production')
+
 const distDir = path.resolve(__dirname, 'dist')
+const externals = getExternals(isProduction)
+
+//--------------------------------------------------------------------------------
 
 let plugins = [
   new webpack.DefinePlugin({
@@ -19,7 +29,8 @@ let plugins = [
   }),
   new HtmlWebpackPlugin({
     filename: 'index.html',
-    template: env.NODE_ENV === 'production' ? 'index.html' : 'index.dev.html',
+    template: 'index.html',
+    ...makeHTMLSubstitutions(env.ASSET_PATH, externals),
   }),
   new CopyPlugin({
     patterns: [
@@ -28,10 +39,39 @@ let plugins = [
   })
 ]
 
-if (env.NODE_ENV === 'production') {
+if (!isProduction) {
   plugins = [
     ...plugins,
-    new CompressionPlugin()
+    new BundleAnalyzerPlugin({
+      analyzerHost: '0.0.0.0',
+      analyzerPort: 8088,
+      openAnalyzer: false,
+    })
+  ]
+}
+
+if (isProduction) {
+  plugins = [
+    ...plugins,
+    new CompressionPlugin({
+      filename: "[path][base].gz",
+      algorithm: "gzip",
+      test: /\.js$|\.css$|\.html$/,
+      threshold: 10240,
+      minRatio: 0.8,
+    }),
+    new CompressionPlugin({
+      filename: "[path][base].br",
+      algorithm: "brotliCompress",
+      test: /\.(js|css|html|svg)$/,
+      compressionOptions: {
+        params: {
+          [zlib.constants.BROTLI_PARAM_QUALITY]: 11,
+        },
+      },
+      threshold: 10240,
+      minRatio: 0.8,
+    }),
   ]
 }
 
@@ -45,10 +85,12 @@ module.exports = {
       new TsconfigPathsPlugin()
     ]
   },
-  externals: {
-    'react': 'React',
-    'react-dom': 'ReactDOM',
-  },
+  externals: externals.reduce(
+    (res, external) => ({
+      ...res,
+      [external.name]: external.globalVarName,
+    }), {}
+  ),
   devtool: 'inline-source-map',
   mode: env.NODE_ENV,
   module: {
@@ -87,11 +129,11 @@ module.exports = {
               // `resourcePath` - `/absolute/path/to/file.js`
               // `resourceQuery` - `?foo=bar`
 
-              if (env.NODE_ENV === 'development') {
-                return 'images/[name].[ext]'
+              if (isProduction) {
+                return 'images/[name]_[contenthash].[ext]'
               }
 
-              return 'images/[name]_[contenthash].[ext]'
+              return 'images/[name].[ext]'
             },
           },
         },
@@ -120,6 +162,12 @@ module.exports = {
         },
       },
     },
+    minimize: isProduction,
+    minimizer: [
+      new TerserPlugin({
+        extractComments: true,
+      })
+    ],
   },
   plugins,
   devServer: {
@@ -130,7 +178,7 @@ module.exports = {
     historyApiFallback: true,
   },
   output: {
-    filename: 'bundle.js',
+    filename: isProduction ? 'bundle.min.js' : 'bundle.js',
     path: distDir,
     publicPath: env.ASSET_PATH,
   },

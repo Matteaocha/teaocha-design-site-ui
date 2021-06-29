@@ -1,3 +1,3 @@
 export {
   memoizeFunction,
-} from '@fluentui/react'
+} from '@fluentui/utilities/lib/memoize'

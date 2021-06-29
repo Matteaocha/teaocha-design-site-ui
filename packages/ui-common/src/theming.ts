@@ -1,11 +1,15 @@
+export { createTheme } from '@fluentui/theme/lib/createTheme'
+
 export {
-  createTheme,
   getTheme,
-  initializeIcons,
   keyframes,
   loadTheme,
   mergeStyles,
   mergeStyleSets,
   setIconOptions,
   IStyle,
-} from '@fluentui/react'
+} from '@fluentui/style-utilities'
+
+export {
+  initializeIcons,
+} from '@fluentui/font-icons-mdl2'

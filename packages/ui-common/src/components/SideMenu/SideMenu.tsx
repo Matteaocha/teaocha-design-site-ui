@@ -1,4 +1,4 @@
-import { PrimaryButton } from '@/packages/ui-common/src/components/PrimaryButton'
+import { PrimaryButton } from '@/packages/ui-common/src/components/Button'
 import { Link } from '@/packages/ui-common/src/components/Link'
 import {
   Panel as Panel,
@@ -7,7 +7,7 @@ import {
 import {
   ITheme as ITheme,
   ThemeProvider as ThemeProvider,
-} from '@/packages/ui-common/src/components/ThemeProvider'
+} from '@/packages/ui-common/src/components/Theme'
 import { useState } from 'react'
 import classNames from './SideMenu.scss'
 

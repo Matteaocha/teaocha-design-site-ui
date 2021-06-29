@@ -13,3 +13,4 @@ WORKDIR /app
 FROM base as dev
 
 EXPOSE 8080
+EXPOSE 8088

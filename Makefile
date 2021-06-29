@@ -4,7 +4,7 @@ export PROJECT_ROOT=$(shell pwd)
 export NODE_DEV_SHELL_IMAGE_NAME=$(PROJECT_NAME)-node-dev-env
 
 
-.PHONY: install node-dev-shell node-dev-shell-image lint test-unit coverage
+.PHONY: start build install node-dev-shell node-dev-shell-image lint test-unit coverage
 
 install:
 	make node-dev-shell-image
@@ -14,8 +14,17 @@ install:
 
 start:
 	docker run -it --rm \
+		-p 8080:8080 \
+		-p 8088:8088 \
 		-v $(PROJECT_ROOT):/app \
+		-h node-dev-shell \
+		--name $(NODE_DEV_SHELL_IMAGE_NAME) \
 		$(NODE_DEV_SHELL_IMAGE_NAME) npm run start
+
+build:
+	docker run -it --rm \
+		-v $(PROJECT_ROOT):/app \
+		$(NODE_DEV_SHELL_IMAGE_NAME) npm run build
 
 lint:
 	docker run -it --rm \
@@ -37,6 +46,7 @@ coverage:
 node-dev-shell:
 	docker run -it --rm \
 		-p 8080:8080 \
+		-p 8088:8088 \
 		-v $(PROJECT_ROOT):/app \
 		-h node-dev-shell \
 		--name $(NODE_DEV_SHELL_IMAGE_NAME) \
