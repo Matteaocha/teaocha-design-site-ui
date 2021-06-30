@@ -1,0 +1,14 @@
+.root {
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.teacup {
+  height: 45%;
+}
+
+.logo {
+  max-height: 100%;
+}

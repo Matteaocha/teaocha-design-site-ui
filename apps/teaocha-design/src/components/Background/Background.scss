@@ -97,23 +97,34 @@
 .bg-left {
   position: absolute;
   bottom: -10px;
-  left: 0px;
+  left: -2px;
+  height: 70%;
   width: 100%;
   min-width: 550px;
 
   & img {
     object-position: bottom left;
   }
+
+  @media screen and (max-width: 800px) {
+    width: 200%;
+    min-width: 550px;
+  }
 }
 
 .bg-right {
   position: absolute;
-  bottom: 0px;
+  bottom: -2px;
   right: -10px;
+  height: 40%;
   width: 60%;
 
   & img {
     object-position: bottom right;
+  }
+
+  @media screen and (max-width: 800px) {
+    width: 60%;
   }
 }
 

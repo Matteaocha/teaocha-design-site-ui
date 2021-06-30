@@ -23,6 +23,7 @@ $headerHeight: 52px;
 .navigation {
   display: flex;
   max-width: 80vw;
+  z-index: 1;
 
   ul {
     display: flex;
@@ -46,12 +47,6 @@ $headerHeight: 52px;
   align-items: center;
 }
 
-.logo-images {
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-}
-
 .root.mode-top {
   box-shadow: $depth-shadow-8;
 }
@@ -65,31 +60,17 @@ $headerHeight: 52px;
     padding-left: $headerHeight * 1.6;
     height: $headerHeight;
     position: relative;
-    flex-flow: row-reverse nowrap;
   }
 
   .navigation {
-    z-index: 1;
-    justify-content: flex-start;
-  }
-
-  .logo-images {
     flex: 1;
-    justify-content: flex-end;
-    margin-right: 24px;
-  }
-
-  .teacup {
-    height: 24px;
-    width: 30px;
-
-    position: relative;
-    left: 8px;
+    justify-content: flex-start;
   }
 
   .logo {
     width: 200px;
-    height: $headerHeight * 0.8;
+    height: $headerHeight * 0.9;
+    margin-right: 24px;
   }
 
   @media screen and (max-width: $screen-min-lg) {
@@ -119,40 +100,36 @@ $headerHeight: 52px;
       ul {
         justify-content: center;
       }
+
+      .nav-item {
+        margin: 4px 8px;
+      }
     }
   
     .logo {
-      width: 450px;
-      max-height: 130px;
+      max-height: 100px;
+      max-width: 500px;
     }
 
     @media screen and (max-width: 1000px) {
       top: 20vh;
-
-      .logo {
-        width: 400px;
-        max-height: 120px;
-      }
     }
 
     @media screen and (max-width: 800px) {
       top: 15vh;
       left: 50vw;
+    }
+
+    @media screen and (max-width: 600px) {
+      left: 50vw;
 
       .logo {
-        width: 350px;
+        height: auto;
+        width: 80vw;
       }
 
       .navigation {
         font-size: 1.5em;
-      }
-    }
-
-    @media screen and (max-width: 500px) {
-      left: 50vw;
-
-      .navigation {
-        font-size: 1.4em;
       }
     }
   }
