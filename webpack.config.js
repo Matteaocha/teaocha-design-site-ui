@@ -1,7 +1,5 @@
 const path = require('path')
-const zlib = require("zlib")
 const webpack = require('webpack')
-const CompressionPlugin = require("compression-webpack-plugin")
 const TerserPlugin = require("terser-webpack-plugin")
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin')
@@ -47,31 +45,6 @@ if (!isProduction) {
       analyzerPort: 8088,
       openAnalyzer: false,
     })
-  ]
-}
-
-if (isProduction) {
-  plugins = [
-    ...plugins,
-    new CompressionPlugin({
-      filename: "[path][base].gz",
-      algorithm: "gzip",
-      test: /\.js$|\.css$|\.html$/,
-      threshold: 10240,
-      minRatio: 0.8,
-    }),
-    new CompressionPlugin({
-      filename: "[path][base].br",
-      algorithm: "brotliCompress",
-      test: /\.(js|css|html|svg)$/,
-      compressionOptions: {
-        params: {
-          [zlib.constants.BROTLI_PARAM_QUALITY]: 11,
-        },
-      },
-      threshold: 10240,
-      minRatio: 0.8,
-    }),
   ]
 }
 
