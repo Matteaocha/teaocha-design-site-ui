@@ -130,10 +130,10 @@ module.exports = {
               // `resourceQuery` - `?foo=bar`
 
               if (isProduction) {
-                return 'images/[name]_[contenthash].[ext]'
+                return '[path][name]_[contenthash].[ext]'
               }
 
-              return 'images/[name].[ext]'
+              return '[path][name].[ext]'
             },
           },
         },
@@ -178,7 +178,7 @@ module.exports = {
     historyApiFallback: true,
   },
   output: {
-    filename: isProduction ? 'bundle.min.js' : 'bundle.js',
+    filename: isProduction ? 'bundle_[contenthash].min.js' : 'bundle.js',
     path: distDir,
     publicPath: env.ASSET_PATH,
   },

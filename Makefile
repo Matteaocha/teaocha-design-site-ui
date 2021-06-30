@@ -1,12 +1,12 @@
 export PROJECT_NAME=teaocha-design-site-ui
 export PROJECT_ROOT=$(shell pwd)
 export AWS_PROFILE=teaocha-design
-export S3_BUCKET=teaocha-design
+export S3_BUCKET=teaochadesign.com
 export NODE_DEV_SHELL_IMAGE_NAME=$(PROJECT_NAME)-node-dev-env
 
 
 .PHONY: start build install node-dev-shell node-dev-shell-image lint test-unit coverage
-	deploy aws-config
+	deploy aws-config clean
 
 install:
 	make node-dev-shell-image
@@ -23,7 +23,10 @@ start:
 		--name $(NODE_DEV_SHELL_IMAGE_NAME) \
 		$(NODE_DEV_SHELL_IMAGE_NAME) npm run start
 
-build:
+clean:
+	rm -rf dist
+
+build: clean
 	docker run -it --rm \
 		-v $(PROJECT_ROOT):/app \
 		-e ASSET_PATH=$(ASSET_PATH) \
@@ -52,13 +55,14 @@ aws-config:
 		-v ~/.aws:/root/.aws \
 		amazon/aws-cli configure --profile $(AWS_PROFILE)
 
-deploy:
+deploy: build
 	docker run --rm -it \
 		-v ~/.aws:/root/.aws \
 		-v $(PROJECT_ROOT)/dist:/dist \
 		amazon/aws-cli s3 sync \
 			--profile $(AWS_PROFILE) \
 			--acl public-read \
+			--delete \
 			/dist s3://$(S3_BUCKET)
 
 # ---------------------------------------------
