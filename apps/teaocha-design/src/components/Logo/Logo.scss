@@ -3,12 +3,17 @@
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
+
+  & img {
+    height: auto;
+  }
 }
 
 .teacup {
-  height: 45%;
+  flex: 2;
+  margin-right: 5%;
 }
 
 .logo {
-  max-height: 100%;
+  flex: 13;
 }

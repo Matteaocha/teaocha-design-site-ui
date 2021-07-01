@@ -69,13 +69,21 @@ $headerHeight: 52px;
 
   .logo {
     width: 200px;
-    height: $headerHeight * 0.9;
+    max-height: $headerHeight * 0.8;
     margin-right: 24px;
   }
 
   @media screen and (max-width: $screen-min-lg) {
     .navigation {
       display: none;
+    }
+
+    .logo {
+      margin: auto;
+    }
+
+    .inner-wrapper {
+      padding-left: 0px;
     }
   }
 }
@@ -107,8 +115,8 @@ $headerHeight: 52px;
     }
   
     .logo {
-      max-height: 100px;
-      max-width: 500px;
+      max-width: 400px;
+      width: 400px;
     }
 
     @media screen and (max-width: 1000px) {
@@ -116,20 +124,31 @@ $headerHeight: 52px;
     }
 
     @media screen and (max-width: 800px) {
-      top: 15vh;
+      top: 130px;
       left: 50vw;
     }
 
-    @media screen and (max-width: 600px) {
-      left: 50vw;
+    @media screen and (max-height: 600px) {
+      top: 130px;
+    }
 
+    @media screen and (max-width: 600px) and (max-height: 600px) {
+      top: 110px;
+    }
+
+    @media screen and (max-width: 600px) {
       .logo {
-        height: auto;
         width: 80vw;
       }
 
       .navigation {
         font-size: 1.5em;
+      }
+    }
+
+    @media screen and (max-width: 400px) {
+      .navigation {
+        font-size: 1.3em;
       }
     }
   }
