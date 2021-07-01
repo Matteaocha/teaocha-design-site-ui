@@ -48,6 +48,7 @@ export enum SideMenuToggleShape {
 export interface ISideMenuProps {
   title: string,
   navItems: SideMenuNavItem[],
+  renderFooter?: () => JSX.Element,
   visible: boolean,
   theme?: ITheme,
   toggleShape?: SideMenuToggleShape,
@@ -125,6 +126,7 @@ export function SideMenu(props: ISideMenuProps): JSX.Element {
                 }
               </ul>
             </nav>
+            {props.renderFooter && props.renderFooter()}
           </div>
         </Panel>
       </ThemeProvider>

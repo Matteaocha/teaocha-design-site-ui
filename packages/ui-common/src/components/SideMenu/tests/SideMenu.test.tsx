@@ -111,3 +111,30 @@ describe('After opening the menu', () => {
     expect(navItems[1].onClick).not.toHaveBeenCalled()
   })
 })
+
+describe('Menu with footer', () => {
+  beforeEach(() => {
+    const renderFooter = () => <div>{'FOOTER'}</div>
+
+    render(
+      <SideMenu
+        title={'Menu'}
+        navItems={[
+          {
+            key: 'home',
+            title: 'Home',
+            onClick: jest.fn(),
+          }
+        ]}
+        renderFooter={renderFooter}
+        visible
+      />
+    )
+
+    fireEvent.click(screen.getByTestId('SideMenu-toggle'))
+  })
+
+  it("Renders the given footer", () => {
+    expect(screen.getByText('FOOTER')).toBeInTheDocument()
+  })
+})

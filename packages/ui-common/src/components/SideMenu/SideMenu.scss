@@ -1,9 +1,14 @@
 .content {
+  height: 80vh;
+  display: flex;
+  flex-flow: column;
+
   h2 {
     font-size: 1.8em;
   }
 
   nav {
+    flex: 1;
     margin-top: 50px;
     text-align: center;
 
