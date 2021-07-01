@@ -54,6 +54,7 @@ export type AppStrings = {
       }
     },
   },
+  externalProfileLinksLabel: string,
   header: {
     images: {
       logo: string,

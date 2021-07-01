@@ -1,6 +1,4 @@
 import {
-  Image,
-  ImageFit,
   Link,
   memoizeFunction,
   SideMenu,
@@ -9,7 +7,40 @@ import {
 import { Logo } from '@/apps/teaocha-design/src/components/Logo'
 import { theme, themeInverted } from '@/apps/teaocha-design/src/theme'
 import { translate } from '@/apps/teaocha-design/src/i18n'
+import { externalProfileLinks } from '@/apps/teaocha-design/src/externalProfiles'
 import _classNames from './Header.scss'
+
+/*
+@description
+Footer for the SideMenu.
+Primarily just renders a couple of external links.
+*/
+function SideMenuFooter(): JSX.Element {
+  return (
+    <div
+      data-testid={'SideMenuFooter'}
+      className={_classNames['side-menu-footer']}
+    >
+      <ul
+        data-testid={'SideMenuFooter-external-links'}
+        className={_classNames['external-profile-links']}
+        aria-label={translate('externalProfileLinksLabel')}
+      >
+        {
+          externalProfileLinks.map(
+            extLink => (
+              <li key={extLink.key}>
+                <Link href={extLink.href} target={'blank'}>
+                  {extLink.title}
+                </Link>
+              </li>
+            )
+          )
+        }
+      </ul>
+    </div>
+  )
+}
 
 export type HeaderNavItem = {
   key: string,
@@ -71,6 +102,7 @@ export function Header(props: HeaderProps): JSX.Element {
             theme={themeInverted}
             visible={props.mode === HeaderMode.Top}
             toggleShape={SideMenuToggleShape.Bubble}
+            renderFooter={SideMenuFooter}
           />
           <Logo
             className={classNames['logo']}

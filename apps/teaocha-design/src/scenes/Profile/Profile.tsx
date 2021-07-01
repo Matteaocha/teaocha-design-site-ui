@@ -1,19 +1,47 @@
 import {
   Image,
   ImageFit,
+  Link,
   Separator,
 } from '@teaocha/ui-common'
 import { MainContent } from '@/apps/teaocha-design/src/components/MainContent'
 import { translate } from '@/apps/teaocha-design/src/i18n'
 import classNames from './Profile.scss'
-import meImg from '@/apps/teaocha-design/assets/images/Matt-Profile.jpeg'
-
 import { ProfileItem } from './components/ProfileItem'
+
+import meImg from '@/apps/teaocha-design/assets/images/Matt-Profile.jpeg'
+import { externalProfileLinks } from '@/apps/teaocha-design/src/externalProfiles'
 import {
   education,
   experience,
   projects,
 } from './profileItems'
+
+/*
+@description
+Links to other pages with a profile on it
+*/
+function ExternalProfileLinks(): JSX.Element {
+  return (
+    <ul
+      data-testid={'ExternalProfileLinks'}
+      className={classNames['external-profile-links']}
+      aria-label={translate('externalProfileLinksLabel')}
+    >
+      {
+        externalProfileLinks.map(
+          extLink => (
+            <li key={extLink.key}>
+              <Link href={extLink.href} target={'blank'}>
+                {extLink.title}
+              </Link>
+            </li>
+          )
+        )
+      }
+    </ul>
+  )
+}
 
 /*
 @description
@@ -41,6 +69,7 @@ export function Profile(): JSX.Element {
         >
           <p>{translate('pages.profile.introduction.p1')}</p>
           <p>{translate('pages.profile.introduction.p2')}</p>
+          <ExternalProfileLinks />
         </section>
         <Separator />
         <section aria-labelledby={'profile_section_experience'}>

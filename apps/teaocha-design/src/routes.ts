@@ -1,4 +1,3 @@
-import { Contact } from './scenes/Contact'
 import { Creations } from './scenes/Creations'
 import { Home } from './scenes/Home'
 import { Profile } from './scenes/Profile'
@@ -50,12 +49,6 @@ export const routes: { [name: string]: AppRoute } = {
     disabled: true,
     hidden: true,
   },
-  contact: {
-    key: 'contact',
-    title: translate('pages.contact.pageTitle'),
-    href: '/contact',
-    component: Contact,
-  }
 }
 
 export const redirects: { [name: string]: AppRedirect } = {

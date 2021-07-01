@@ -72,6 +72,7 @@ export const enUS: AppStrings = {
       }
     },
   },
+  externalProfileLinksLabel: 'Links to external profile sites',
   header: {
     images: {
       logo: 'Teaocha Design Logo',

@@ -153,3 +153,24 @@ $headerHeight: 52px;
     }
   }
 }
+
+.side-menu-footer {
+  ul {
+    margin: 0px;
+    padding: 0px;
+  }
+
+  li {
+    list-style: none;
+    margin: 8px;
+  }
+
+  .external-profile-links {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 1.2em;
+  }
+}
