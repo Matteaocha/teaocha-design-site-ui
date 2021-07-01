@@ -1,83 +1,86 @@
+$steamBottomOffset: 200px;
+$steamBottomOffsetSm: 125px;
+
 @keyframes steamrise {
   0% {
-    bottom: 180px;
+    bottom: $steamBottomOffset + 20px;
     opacity: 0.0;
   }
   20% {
     opacity: 1.0;
   }
   100% {
-    bottom: 300px;
+    bottom: $steamBottomOffset + 70px;
     opacity: 0.0;
   }
 }
 
 @keyframes steamrise2 {
   0% {
-    bottom: 160px;
+    bottom: $steamBottomOffset;
     opacity: 0.0;
   }
   20% {
     opacity: 0.8;
   }
   100% {
-    bottom: 250px;
+    bottom: $steamBottomOffset + 90px;
     opacity: 0.0;
   }
 }
 
 @keyframes steamrise3 {
   0% {
-    bottom: 170px;
+    bottom: $steamBottomOffset + 10px;
     opacity: 0.0;
   }
   20% {
     opacity: 0.4;
   }
   100% {
-    bottom: 250px;
+    bottom: $steamBottomOffset + 90px;
     opacity: 0.0;
   }
 }
 
 @keyframes steamriseSMALL {
   0% {
-    bottom: 110px;
+    bottom: $steamBottomOffsetSm + 10px;
     opacity: 0.0;
   }
   20% {
     opacity: 1.0;
   }
   100% {
-    bottom: 210px;
+    bottom: $steamBottomOffsetSm + 110px;
     opacity: 0.0;
   }
 }
 
 @keyframes steamrise2SMALL {
   0% {
-    bottom: 100px;
+    bottom: $steamBottomOffsetSm;
     opacity: 0.0;
   }
   20% {
     opacity: 0.8;
   }
   100% {
-    bottom: 170px;
+    bottom: $steamBottomOffsetSm + 70px;
     opacity: 0.0;
   }
 }
 
 @keyframes steamrise3SMALL {
   0% {
-    bottom: 110px;
+    bottom: $steamBottomOffsetSm + 10px;
     opacity: 0.0;
   }
   20% {
     opacity: 0.4;
   }
   100% {
-    bottom: 160px;
+    bottom: $steamBottomOffsetSm + 50px;
     opacity: 0.0;
   }
 }
@@ -130,9 +133,13 @@
 
 .table {
   position: absolute;
-  bottom: -110px;
-  right: -35px;
+  bottom: -80px;
+  right: -10px;
   width: 300px;
+
+  & img {
+    object-position: bottom right;
+  }
 
   @media screen and (max-width: 1200px) {
     width: 250px;
@@ -146,15 +153,19 @@
 
 .teacup {
   position: absolute;
-  bottom: 100px;
+  bottom: 130px;
   right: 40px;
   height: 140px;
   width: 160px;
 
+  & img {
+    object-position: bottom;
+  }
+
   @media screen and (max-width: 1200px) {
     width: 10%;
     right: 30px;
-    bottom: 60px;
+    bottom: 90px;
   }
 
   @media screen and (max-width: 800px) {
@@ -168,6 +179,10 @@
   opacity: 0.0;
   width: 60px;
   animation: steamrise 6s linear 0s infinite;
+
+  & img {
+    object-position: bottom;
+  }
 
   @media screen and (max-width: 1200px) {
     width: 5%;
@@ -187,6 +202,10 @@
   width: 70px;
   animation: steamrise2 6s linear 4s infinite;
 
+  & img {
+    object-position: bottom;
+  }
+
   @media screen and (max-width: 1200px) {
     width: 5%;
     right: 55px;
@@ -204,6 +223,10 @@
   opacity: 0.0;
   width: 70px;
   animation: steamrise3 6s linear 2s infinite;
+
+  & img {
+    object-position: bottom;
+  }
 
   @media screen and (max-width: 1200px) {
     width: 5%;
