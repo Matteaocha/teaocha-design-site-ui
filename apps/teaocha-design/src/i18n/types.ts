@@ -16,10 +16,6 @@ export type AppStrings = {
         linkLabel: string,
       }
     },
-    contact: {
-      pageTitle: string,
-      message: string,
-    },
     home: {
       pageTitle: string,
     },

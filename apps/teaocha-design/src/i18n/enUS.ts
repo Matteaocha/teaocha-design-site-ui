@@ -21,13 +21,6 @@ export const enUS: AppStrings = {
         linkLabel: 'View page',
       }
     },
-    contact: {
-      pageTitle: 'Contact',
-      message: `
-        If you'd like to get in touch with me then you can send me a message on
-        any of the platforms listed below:
-      `
-    },
     home: {
       pageTitle: 'Home',
     },
