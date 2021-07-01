@@ -1,1 +1,1 @@
-export { Icon } from '@fluentui/react/lib/Icon'
+export { Icon } from '@fluentui/react'

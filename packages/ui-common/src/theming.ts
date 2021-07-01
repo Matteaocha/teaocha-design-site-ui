@@ -1,4 +1,4 @@
-export { createTheme } from '@fluentui/theme/lib/createTheme'
+export { createTheme } from '@fluentui/theme'
 
 export {
   getTheme,

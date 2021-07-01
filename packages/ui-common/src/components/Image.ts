@@ -1,1 +1,1 @@
-export { Image, ImageFit } from '@fluentui/react/lib/Image'
+export { Image, ImageFit } from '@fluentui/react'
