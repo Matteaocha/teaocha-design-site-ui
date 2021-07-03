@@ -41,7 +41,7 @@ export const apps = [
 export const arts = [
   {
     title: 'Grok Lock',
-    href: 'http://www.groklock.com',
+    href: 'https://www.groklock.com',
     image: grokLockLogo,
     fallbackIconName: 'Brush',
     description: [

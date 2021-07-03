@@ -23,6 +23,7 @@ export function Background(): JSX.Element {
       data-semantic-tag={'Background'}
       className={classNames['root']}
       style={{ backgroundColor: theme.palette.white }}
+      aria-hidden
     >
       <Image
         src={imgBgLeft}

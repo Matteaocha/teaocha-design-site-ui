@@ -95,6 +95,7 @@ export function Header(props: HeaderProps): JSX.Element {
           <div
             className={classNames['background']}
             style={{ backgroundColor: theme.palette.white }}
+            aria-hidden
           />
           <SideMenu
             title={translate('sideMenu.title')}

@@ -184,7 +184,7 @@ export const projects = [
   {
     title: 'Grok Lock - Hill Shizuki',
     link: {
-      href: 'http://www.groklock.com',
+      href: 'https://www.groklock.com',
       text: 'www.groklock.com',
     },
     fallbackIconName: 'MusicInCollectionFill',
