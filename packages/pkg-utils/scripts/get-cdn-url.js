@@ -1,4 +1,4 @@
-const getPackageVersion = require(`${__dirname}/get-package-version`)
+const getPackageVersion = require('./get-package-version')
 
 const UNPKG_BASE_URL = 'https://unpkg.com'
 const CDNJS_BASE_URL = 'https://cdnjs.cloudflare.com/ajax/libs'

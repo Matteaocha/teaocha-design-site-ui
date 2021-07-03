@@ -11,7 +11,7 @@ I develop and build this code from within a Docker container running within a Un
 make install
 
 // Running:
-make start
+(APP=teaocha-design) make start
 ```
 
 ## Developing

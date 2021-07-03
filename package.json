@@ -4,10 +4,8 @@
   "description": "Code for the UI of teaochadesign.com",
   "main": "index.js",
   "scripts": {
-    "build": "NODE_ENV=production webpack",
     "lint": "eslint ${ESLINT_ARGS}",
     "lint-fix": "eslint --fix ${ESLINT_ARGS}",
-    "start": "webpack serve",
     "test": "jest ${JEST_ARGS}",
     "test-watch": "jest --watchAll ${JEST_ARGS}",
     "test-coverage": "jest --coverage ${JEST_ARGS}"
@@ -21,36 +19,21 @@
     "./apps/*",
     "./packages/*"
   ],
-  "devDependencies": {
-    "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^12.0.0",
-    "@types/jest": "^26.0.23",
+  "dependencies": {
+    "@types/lodash": "^4.14.170",
     "@types/react": "^17.0.11",
+    "@types/react-dom": "^17.0.8",
+    "typescript": "^4.3.4"
+  },
+  "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.27.0",
     "@typescript-eslint/parser": "^4.27.0",
-    "autoprefixer": "^10.2.6",
-    "copy-webpack-plugin": "^9.0.0",
-    "css-loader": "^5.2.6",
     "eslint": "^7.29.0",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.24.0",
-    "file-loader": "^6.2.0",
-    "html-webpack-plugin": "^5.3.1",
-    "jest": "^27.0.4",
-    "node-sass": "^6.0.0",
-    "postcss-loader": "^6.1.0",
-    "react-test-renderer": "^17.0.2",
-    "sass": "^1.35.1",
-    "sass-loader": "^12.1.0",
-    "style-loader": "^2.0.0",
-    "terser-webpack-plugin": "^5.1.4",
+    "jest": "^27.0.5",
     "ts-jest": "^27.0.3",
     "ts-loader": "^9.2.3",
-    "tsconfig-paths-webpack-plugin": "^3.5.1",
-    "typescript": "^4.3.4",
-    "webpack": "^5.39.1",
-    "webpack-bundle-analyzer": "^4.4.2",
-    "webpack-cli": "^4.7.2",
-    "webpack-dev-server": "^3.11.2"
+    "tsconfig-paths-webpack-plugin": "^3.5.1"
   }
 }

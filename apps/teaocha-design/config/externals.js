@@ -1,7 +1,4 @@
-const {
-  getUnpkgURL,
-  getCdnjsURL,
-} = require(`${__dirname}/../scripts/get-cdn-url`)
+const { getUnpkgURL } = require('@teaocha/pkg-utils/scripts/get-cdn-url')
 
 module.exports.getExternals = function(isProduction) {
   return [

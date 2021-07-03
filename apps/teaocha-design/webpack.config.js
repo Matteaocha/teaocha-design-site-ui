@@ -90,7 +90,14 @@ module.exports = {
           // Compiles Sass to CSS
           'sass-loader',
           // Enables auto-prexing etc
-          'postcss-loader',
+          {
+            loader: "postcss-loader",
+            options: {
+              postcssOptions: {
+                plugins: [require('autoprefixer')],
+              },
+            },
+          },
         ],
       },
       {

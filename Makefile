@@ -4,6 +4,9 @@ export AWS_PROFILE=teaocha-design
 export S3_BUCKET=teaochadesign.com
 export NODE_DEV_SHELL_IMAGE_NAME=$(PROJECT_NAME)-node-dev-env
 
+# App which runs by default
+export APP=teaocha-design
+
 
 .PHONY: start build install node-dev-shell node-dev-shell-image lint test-unit coverage
 	deploy aws-config clean
@@ -21,15 +24,17 @@ start:
 		-v $(PROJECT_ROOT):/app \
 		-h node-dev-shell \
 		--name $(NODE_DEV_SHELL_IMAGE_NAME) \
+		-w /app/apps/$(APP) \
 		$(NODE_DEV_SHELL_IMAGE_NAME) npm run start
 
 clean:
-	rm -rf dist
+	rm -rf apps/*/dist
 
 build: clean
 	docker run -it --rm \
 		-v $(PROJECT_ROOT):/app \
 		-e ASSET_PATH=$(ASSET_PATH) \
+		-w /app/apps/$(APP) \
 		$(NODE_DEV_SHELL_IMAGE_NAME) npm run build
 
 lint:
@@ -58,7 +63,7 @@ aws-config:
 deploy: build
 	docker run --rm -it \
 		-v ~/.aws:/root/.aws \
-		-v $(PROJECT_ROOT)/dist:/dist \
+		-v $(PROJECT_ROOT)/apps/$(APP)/dist:/dist \
 		amazon/aws-cli s3 sync \
 			--profile $(AWS_PROFILE) \
 			--acl public-read \

@@ -1,0 +1,7 @@
+{
+  "name": "@teaocha/pkg-utils",
+  "version": "1.0.0",
+  "description": "A place to store common package setup scripts and tools etc.",
+  "main": "index.js",
+  "dependencies": {}
+}
