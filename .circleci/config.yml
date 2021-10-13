@@ -27,7 +27,6 @@ jobs:
           from: apps/teaocha-design/dist/
           to: s3://teaochadesign.com
           arguments: |
-              --recursive \
               --acl public-read \
               --delete
 
