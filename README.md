@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/Matteaocha/teaocha-design-site-ui/tree/main.svg?style=svg)](https://circleci.com/gh/Matteaocha/teaocha-design-site-ui/tree/main)
+
 # Teaocha-Design Site UI
 
 This repo contains the code for the Teaocha-Design UI and embedded applications. Given that one of the purposes of the site is to act as a showcase for dev related stuff, I see no harm in this code being public. So... enjoy?
