@@ -23,10 +23,13 @@ jobs:
       - checkout
       - run: npm install
       - run: cd apps/teaocha-design && npm run build
-      - aws-s3/copy:
+      - aws-s3/sync:
           from: apps/teaocha-design/dist/
           to: s3://teaochadesign.com
-          arguments: --recursive
+          arguments: |
+              --recursive \
+              --acl public-read \
+              --delete
 
 workflows:
   lint_test_deploy:
