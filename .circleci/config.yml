@@ -28,14 +28,13 @@ jobs:
           to: s3://teaochadesign.com
           arguments: --recursive
 
-# workflows:
-#   lint_test:
-#     jobs:
-#       - lint_test
-#   build_deploy:
-#     jobs:
-#       - build_deploy:
-#           filters:
-#             branches:
-#               only:
-#                 - main
+workflows:
+  lint_test_deploy:
+    jobs:
+      - lint_test
+      - build_deploy:
+          context: aws
+          filters:
+            branches:
+              only:
+                - main
