@@ -12,12 +12,11 @@ setIconOptions({ disableWarnings: true })
 function makeMinimumProfileItem() {
   return {
     title: 'TITLE',
+    from: 'FROM',
     fallbackIconName: 'ICON',
-    sections: [
-      {
-        from: 'FROM',
-      }
-    ],
+    sections: [{
+      description: ['SECTION_DESCRIPTION'],
+    }],
   }
 }
 
@@ -27,6 +26,7 @@ it("Renders a minimum profile item", () => {
 
   expect(within(rendered).getByText('TITLE')).toBeInTheDocument()
   expect(within(rendered).getByText('FROM')).toBeInTheDocument()
+  expect(within(rendered).getByText('SECTION_DESCRIPTION')).toBeInTheDocument()
   expect(within(rendered).getByTestId('ProfileItem-icon')).toBeInTheDocument()
 })
 
@@ -68,20 +68,36 @@ it("Renders a profile item with a link - specifying display text", () => {
   expect(within(rendered).getByText('LINK TEXT')).toBeInTheDocument()
 })
 
+it("Renders a profile item from-until-duration text", () => {
+  const mockProfileItemMin = {
+    ...makeMinimumProfileItem(),
+    from: 'FROM',
+    until: 'UNTIL',
+    duration: 'DURATION',
+  }
+
+  render(<ProfileItem {...mockProfileItemMin}/>)
+  const rendered = screen.getByTestId('ProfileItem')
+  expect(within(rendered).getByText('FROM')).toBeInTheDocument()
+  expect(within(rendered).getByText('UNTIL')).toBeInTheDocument()
+  expect(within(rendered).getByText('DURATION')).toBeInTheDocument()
+})
+
 it("Renders a profile item with multiple sections", () => {
   const mockProfileItemMin = {
     ...makeMinimumProfileItem(),
     sections: [
       {
         title: 'SECTION 0 TITLE',
-        from: 'SECTION 0 FROM',
-        until: 'SECTION 0 UNTIL',
-        duration: 'SECTION 0 DURATION',
         location: 'SECTION 0 LOCATION',
         description: ['SECTION 0 DESCRIPTION'],
       },
       {
-        from: 'SECTION 1 FROM',
+        duration: 'SECTION 1 DURATION',
+        description: [
+          'SECTION 1 DESCRIPTION 1',
+          'SECTION 1 DESCRIPTION 2'
+        ],
       }
     ]
   }
@@ -92,11 +108,10 @@ it("Renders a profile item with multiple sections", () => {
   expect(sections).toHaveLength(2)
 
   expect(within(sections[0]).getByText('SECTION 0 TITLE')).toBeInTheDocument()
-  expect(within(sections[0]).getByText('SECTION 0 FROM')).toBeInTheDocument()
-  expect(within(sections[0]).getByText('SECTION 0 UNTIL')).toBeInTheDocument()
-  expect(within(sections[0]).getByText('SECTION 0 DURATION')).toBeInTheDocument()
   expect(within(sections[0]).getByText('SECTION 0 LOCATION')).toBeInTheDocument()
   expect(within(sections[0]).getByText('SECTION 0 DESCRIPTION')).toBeInTheDocument()
 
-  expect(within(sections[1]).getByText('SECTION 1 FROM')).toBeInTheDocument()
+  expect(within(sections[1]).getByText('SECTION 1 DURATION')).toBeInTheDocument()
+  expect(within(sections[1]).getByText('SECTION 1 DESCRIPTION 1')).toBeInTheDocument()
+  expect(within(sections[1]).getByText('SECTION 1 DESCRIPTION 2')).toBeInTheDocument()
 })

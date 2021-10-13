@@ -11,8 +11,6 @@ import classNames from './ProfileItem.scss'
 
 export interface IProfileItemSection {
   title?: string,
-  from: string,
-  until?: string,
   duration?: string,
   location?: string,
   description?: string[],
@@ -30,18 +28,17 @@ function ProfileItemSection(props: IProfileItemSection): JSX.Element {
       data-testid={'ProfileItemSection'}
     >
       {props.title && <h4>{props.title}</h4>}
-      <div
-        className={classNames['duration']}
-        aria-label={translate('pages.profile.item.durationLabel')}
-        style={{
-          color: theme.palette.neutralSecondary
-        }}
-      >
-        <span>{props.from}</span>
-        <span>{' - '}</span>
-        <span>{props.until || translate('pages.profile.item.durationUntilDefault')}</span>
-        {props.duration && <span>{props.duration}</span>}
-      </div>
+      {
+        props.duration && (
+          <div
+            className={classNames['duration']}
+            aria-label={translate('pages.profile.item.durationLabel')}
+            style={{ color: theme.palette.neutralSecondary }}
+          >
+            {props.duration}
+          </div>
+        )
+      }
       <div
         className={classNames['location']}
         aria-label={translate('pages.profile.item.locationLabel')}
@@ -75,6 +72,9 @@ export interface IProfileItem {
     href: string,
     text?: string,
   },
+  from: string,
+  until?: string,
+  duration?: string,
   image?: string,
   fallbackIconName: string,
   sections: IProfileItemSection[],
@@ -123,6 +123,18 @@ export function ProfileItem(props: IProfileItem): JSX.Element {
               </Link>
             )
           }
+        </div>
+        <div
+          className={classNames['duration']}
+          aria-label={translate('pages.profile.item.durationLabel')}
+          style={{
+            color: theme.palette.neutralSecondary
+          }}
+        >
+          <span>{props.from}</span>
+          <span>{' - '}</span>
+          <span>{props.until || translate('pages.profile.item.durationUntilDefault')}</span>
+          {props.duration && <span>{props.duration}</span>}
         </div>
         <ul>
           {

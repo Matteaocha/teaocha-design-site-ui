@@ -17,13 +17,14 @@ export const experience = [
       href: 'https://www.eaglegenomics.com',
       text: 'www.eaglegenomics.com',
     },
+    from: 'Jan 2017',
+    until: 'Dec 2020',
+    duration: '4 Years',
     image: eagleLogo,
     fallbackIconName: 'Keyboard',
     sections: [
       {
         title: 'Senior Software Engineer',
-        from: 'Nov 2019',
-        until: 'Dec 2020',
         duration: '1 year',
         location: 'Cambridge, England, United Kingdom',
         description: [
@@ -45,8 +46,6 @@ export const experience = [
       },
       {
         title: 'Software Engineer',
-        from: 'Jan 2017',
-        until: 'Oct 2019',
         duration: '3 years',
         location: 'Cambridge, United Kingdom',
       }
@@ -55,11 +54,11 @@ export const experience = [
   {
     title: 'Work-Abroad, Studying & Freelance Software Engineering',
     fallbackIconName: 'Education',
+    from: 'Jan 2016',
+    until: 'Nov 2016',
+    duration: '1 year',
     sections: [
       {
-        from: 'Jan 2016',
-        until: 'Nov 2016',
-        duration: '1 year',
         location: 'Japan & United Kingdom',
         description: [
           `
@@ -81,13 +80,13 @@ export const experience = [
       href: 'https://www.wordwall.net',
       text: 'www.wordwall.net',
     },
+    from: 'Nov 2014',
+    until: 'Oct 2015',
+    duration: '1 year',
     fallbackIconName: 'Keyboard',
     image: wordwallLogo,
     sections: [
       {
-        from: 'Nov 2014',
-        until: 'Oct 2015',
-        duration: '1 year',
         location: 'Liverpool, United Kingdom',
         description: [
           `
@@ -109,14 +108,14 @@ export const experience = [
       href: 'http://www.jetprogramme.org',
       text: 'www.jetprogramme.org',
     },
+    from: 'Jul 2011',
+    until: 'Jun 2013',
+    duration: '2 years',
     fallbackIconName: 'WhiteBoardApp16',
     image: jetLogo,
     sections: [
       {
         title: 'Assistant Language Teacher',
-        from: 'Jul 2011',
-        until: 'Jun 2013',
-        duration: '2 years',
         location: 'Hagi, Yamaguchi, Japan',
         description: [
           `
@@ -136,13 +135,13 @@ export const education = [
       href: 'https://www.southampton.ac.uk',
       text: 'www.southampton.ac.uk',
     },
+    from: 'Sep 2007',
+    until: 'Jun 2011',
+    duration: '4 years',
     fallbackIconName: 'Education',
     sections: [
       {
         title: 'MPhys Physics - 1st Class Honors',
-        from: 'Sep 2007',
-        until: 'Jun 2011',
-        duration: '4 years',
         location: 'Southampton, United Kingdom',
         description: [
           `
@@ -163,12 +162,12 @@ export const education = [
       href: 'http://www.jlpt.jp',
       text: 'www.jlpt.jp',
     },
+    from: 'Jan 2019',
+    until: ' ',
     fallbackIconName: 'Certificate',
     sections: [
       {
         title: 'Level N2 Certification',
-        from: 'Jan 2019',
-        until: ' ',
         description: [
           `
             Second highest level (one below fluent) of the JLPT - internationally
@@ -187,13 +186,13 @@ export const projects = [
       href: 'https://www.groklock.com',
       text: 'www.groklock.com',
     },
+    from: 'Nov 2013',
+    until: 'Mar 2014',
+    duration: '5 Months',
     fallbackIconName: 'MusicInCollectionFill',
     image: grokLockLogo,
     sections: [
       {
-        from: 'Nov 2013',
-        until: 'Mar 2014',
-        duration: '5 Months',
         location: 'Yorkshire, United Kingdom',
         description: [
           `
