@@ -1,0 +1,41 @@
+version: 2.1
+
+orbs:
+  node: circleci/node@4.1
+  aws-s3: circleci/aws-s3@2.0
+
+jobs:
+  lint_test:
+    executor:
+      name: node/default
+      tag: '16.11.1'
+    steps:
+      - checkout
+      - run: npm install --dev
+      - run: npm run lint
+      - run: npm run test
+
+  build_deploy:
+    executor:
+      name: node/default
+      tag: '16.11.1'
+    steps:
+      - checkout
+      - run: npm install
+      - run: cd apps/teaocha-design && npm run build
+      - aws-s3/copy:
+          from: apps/teaocha-design/dist/
+          to: s3://teaochadesign.com
+          arguments: --recursive
+
+workflows:
+  lint_test:
+    jobs:
+      - lint_test
+  build_deploy:
+    jobs:
+      - build_deploy:
+          filters:
+            branches:
+              only:
+                - main
