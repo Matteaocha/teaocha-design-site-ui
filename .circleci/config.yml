@@ -34,6 +34,8 @@ workflows:
       - lint_test
       - build_deploy:
           context: aws
+          requires:
+            - lint_test
           filters:
             branches:
               only:
