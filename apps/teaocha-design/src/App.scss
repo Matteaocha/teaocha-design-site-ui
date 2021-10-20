@@ -2,7 +2,6 @@
 
 .main {
   margin-top: 80px;
-  padding-bottom: 200px;
 
   h1 {
     font-size: $font-size-su;
@@ -18,5 +17,15 @@
 
   p, span, div {
     font-family: $contentFont;
+  }
+
+  &::after {
+    /*
+    Fixed-height whitespace to pad the bottom of the main content.
+    'margin-bottom' is sometimes unpredictable when using 'flex: column'
+    */
+    content: ' ';
+    display: block;
+    height: 200px;
   }
 }
